@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MA Transformation Lab - Holistic Counselling & Wellness</title>
+    <meta name="description" content="Certified holistic counselling, wellness coaching, and transformation programs. Serving Canada, UK, and East Africa.">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Lato:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --gold: #FFB300;
+            --orange: #FF6A00;
+            --black: #000000;
+            --white: #FFFFFF;
+            --gradient: linear-gradient(135deg, #FF6A00, #FFB300);
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            color: var(--black);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Merriweather', serif;
+        }
+
+        /* Header/Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: var(--black);
+            padding: 0.8rem 2rem;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(255, 179, 0, 0.3);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-text .brand-name {
+            font-family: 'Merriweather', serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--gold);
+            letter-spacing: 1px;
+            line-height: 1.1;
+        }
+
+        .logo-text .tagline {
+            font-size: 0.75rem;
+            font-style: italic;
+            color: var(--white);
+            opacity: 0.8;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
+
+        nav a:hover {
+            color: var(--gold);
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--gold);
+            transition: 0.3s;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: var(--black);
+            display: flex;
+            align-items: center;
+            padding: 6rem 2rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 80%;
+            height: 150%;
+            background: var(--gradient);
+            opacity: 0.1;
+            border-radius: 50%;
+            animation: pulse 8s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.1; }
+            50% { transform: scale(1.1); opacity: 0.15; }
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-text h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            color: var(--gold);
+            margin-bottom: 1rem;
+            line-height: 1.1;
+        }
+
+        .hero-text .subtitle {
+            font-size: 1.3rem;
+            color: var(--white);
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+
+        .credentials {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .credential-badge {
+            background: rgba(255, 179, 0, 0.1);
+            border: 1px solid var(--gold);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            color: var(--gold);
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .hero-text p {
+            color: var(--white);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.8;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: var(--gradient);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255, 179, 0, 0.5);
+        }
+
+        .hero-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo-display {
+            width: 100%;
+            max-width: 350px;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Services Section */
+        .services {
+            padding: 6rem 2rem;
+            background: var(--white);
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--black);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: #666;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: #f8f8f8;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            border-top: 4px solid var(--gold);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            color: var(--black);
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: #666;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .service-features {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-features li {
+            padding: 0.4rem 0;
+            color: #555;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .service-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+            font-weight: bold;
+        }
+
+        /* Course Preview */
+        .course-preview {
+            padding: 6rem 2rem;
+            background: #f8f8f8;
+        }
+
+        .course-modules {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .module-card {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--gold);
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .module-number {
+            color: var(--gold);
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .module-card h4 {
+            color: var(--black);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .module-card p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* Contact/CTA Section */
+        .cta-section {
+            padding: 4rem 2rem;
+            background: var(--gradient);
+            text-align: center;
+            color: var(--white);
+        }
+
+        .cta-section h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--black);
+            color: var(--white);
+            padding: 3rem 2rem 1.5rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .footer-section p, .footer-section a {
+            color: var(--white);
+            opacity: 0.8;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a:hover {
+            color: var(--gold);
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-logo svg {
+            width: 40px;
+            height: 40px;
+        }
+
+        .footer-logo-text {
+            font-family: 'Merriweather', serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--gold);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 1.5rem;
+            text-align: center;
+            opacity: 0.7;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .credentials {
+                justify-content: center;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo-container">
+                <svg class="logo-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="starGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
+                            <stop offset="30%" style="stop-color:#FFB300;stop-opacity:1" />
+                            <stop offset="70%" style="stop-color:#FF8C00;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#FF6A00;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <!-- Modern M Star Logo -->
+                    <path d="M30,20 L50,50 L70,20 L80,30 L50,60 L20,30 Z" fill="url(#starGrad)"/>
+                    <path d="M40,40 L50,55 L60,40 L65,45 L50,65 L35,45 Z" fill="url(#starGrad)" opacity="0.8"/>
+                    <circle cx="50" cy="75" r="8" fill="url(#starGrad)" opacity="0.6"/>
+                </svg>
+                <div class="logo-text">
+                    <span class="brand-name">MA TRANSFORMATION LAB</span>
+                    <span class="tagline">Ignite Your Growth</span>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#course">Programs</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Transform Your Life</h1>
+                <p class="subtitle">Holistic Counselling & Wellness</p>
+                <div class="credentials">
+                    <span class="credential-badge">🇨🇦 Canada</span>
+                    <span class="credential-badge">🇬🇧 UK</span>
+                    <span class="credential-badge">🌍 East Africa</span>
+                </div>
+                <p>Certified holistic counselling, wellness coaching, and transformation programs. From mental health support to diabetic reversal, career guidance to relationship counselling — we guide you to health, clarity, and purpose.</p>
+                <a href="#services" class="cta-button">Explore Services</a>
+            </div>
+            <div class="hero-visual">
+                <svg class="logo-display" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="heroStarGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
+                            <stop offset="30%" style="stop-color:#FFB300;stop-opacity:1" />
+                            <stop offset="70%" style="stop-color:#FF8C00;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#FF6A00;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <!-- Large Hero Logo -->
+                    <path d="M120,80 L200,200 L280,80 L320,120 L200,240 L80,120 Z" fill="url(#heroStarGrad)" filter="drop-shadow(0 0 25px rgba(255,179,0,0.7))"/>
+                    <path d="M160,160 L200,220 L240,160 L260,180 L200,260 L140,180 Z" fill="url(#heroStarGrad)" opacity="0.8" filter="drop-shadow(0 0 20px rgba(255,140,0,0.6))"/>
+                    <circle cx="200" cy="300" r="30" fill="url(#heroStarGrad)" opacity="0.6" filter="drop-shadow(0 0 15px rgba(255,106,0,0.5))"/>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Comprehensive Services</h2>
+                <p>Holistic support for every aspect of your transformation</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🧠</div>
+                    <h3>Mental Health Counselling</h3>
+                    <p>Professional support for anxiety, depression, stress, and emotional challenges. Certified holistic counselling approach.</p>
+                    <ul class="service-features">
+                        <li>Trauma-informed care</li>
+                        <li>Anxiety & depression support</li>
+                        <li>Stress management</li>
+                        <li>Emotional regulation</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">❤️</div>
+                    <h3>Relationship & Family Counselling</h3>
+                    <p>Guidance for couples, marriage enrichment, family dynamics, and healthy relationship building.</p>
+                    <ul class="service-features">
+                        <li>Marriage counselling</li>
+                        <li>Pre-marital guidance</li>
+                        <li>Family therapy</li>
+                        <li>Communication skills</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">💪</div>
+                    <h3>Health & Wellness Coaching</h3>
+                    <p>Personalized nutrition, fitness, and lifestyle transformation programs for optimal wellbeing.</p>
+                    <ul class="service-features">
+                        <li>Nutrition planning</li>
+                        <li>Fitness guidance</li>
+                        <li>Sleep optimization</li>
+                        <li>Energy management</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🩺</div>
+                    <h3>Diabetic Management & Reversal</h3>
+                    <p>Evidence-based programs for managing and reversing Type 2 diabetes through lifestyle transformation.</p>
+                    <ul class="service-features">
+                        <li>Blood sugar management</li>
+                        <li>Diabetic nutrition plans</li>
+                        <li>Lifestyle modification</li>
+                        <li>Reversal protocols</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🚀</div>
+                    <h3>Career Coaching</h3>
+                    <p>Professional guidance for career transitions, job search strategies, and discovering your purpose-driven path.</p>
+                    <ul class="service-features">
+                        <li>Career clarity & direction</li>
+                        <li>Resume & interview prep</li>
+                        <li>Career transitions</li>
+                        <li>Purpose discovery</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🌱</div>
+                    <h3>Personal Growth Mentorship</h3>
+                    <p>Transform limiting beliefs, build confidence, and create sustainable habits for lasting transformation.</p>
+                    <ul class="service-features">
+                        <li>Mindset transformation</li>
+                        <li>Confidence building</li>
+                        <li>Goal achievement</li>
+                        <li>Habit formation</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="course-preview" id="course">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>The Transformation Journey</h2>
+                <p>Our comprehensive 12-module holistic wellness program</p>
+            </div>
+            <div class="course-modules">
+                <div class="module-card">
+                    <div class="module-number">MODULE 1</div>
+                    <h4>The Awakening Moment</h4>
+                    <p>Discover your "why" and begin your transformation journey with courage and clarity.</p>
+                </div>
+                <div class="module-card">
+                    <div class="module-number">MODULE 2</div>
+                    <h4>Healing from Inside Out</h4>
+                    <p>Trauma-informed emotional understanding, nervous system regulation, and breathwork techniques.</p>
+                </div>
+                <div class="module-card">
+                    <div class="module-number">MODULE 3</div>
+                    <h4>The Art of Letting Go</h4>
+                    <p>Release emotional dependencies, set healthy boundaries, and reclaim personal peace.</p>
+                </div>
+                <div class="module-card">
+                    <div class="module-number">MODULE 4</div>
+                    <h4>The New Self</h4>
+                    <p>Reclaim confidence, design your next version, and establish daily success structures.</p>
+                </div>
+                <div class="module-card">
+                    <div class="module-number">MODULE 5</div>
+                    <h4>Nutrition & Metabolic Health</h4>
+                    <p>Master the nutrition-mental health connection. Learn diabetic reversal protocols and optimal eating strategies.</p>
+                </div>
+                <div class="module-card">
+                    <div class="module-number">MODULE 6</div>
+                    <h4>Faith, Flow & Focus</h4>
+                    <p>Integrate spiritual practices, gratitude, and mindfulness into daily transformation.</p>
+                </div>
+                <div class="module-card">
+                    <div class="module-number">MODULE 7</div>
+                    <h4>Purpose Mapping</h4>
+                    <p>Turn pain into purpose and identify your unique service path in the world.</p>
+                </div>
+                <div class="module-card">
+                    <div class="module-number">MODULE 8</div>
+                    <h4>Mastering Communication</h4>
+                    <p>Develop authentic speaking skills, active listening, and healing through voice.</p>
+                </div>
+                <div class="module-card">
+                    <div class="module-number">MODULE 9</div>
+                    <h4>Building Legacy Projects</h4>
+                    <p>Design purpose-driven life projects that create sustainable impact and fulfillment.</p>
+                </div>
+                <div class="module-card">
+                    <div class="module-number">MODULE 10</div>
+                    <h4>Becoming the Guide</h4>
+                    <p>Transition from survivor to mentor while maintaining sustainable energy and avoiding burnout.</p>
+                </div>
+                <div class="module-card">
+                    <div class="module-number">MODULE 11</div>
+                    <h4>Continuous Evolution</h4>
+                    <p>Cultivate growth mindset, embrace feedback, and measure your transformation progress.</p>
+                </div>
+                <div class="module-card">
+                    <div class="module-number">MODULE 12</div>
+                    <h4>Legacy Mindset</h4>
+                    <p>Define success beyond money and create your lasting transformation legacy.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section" id="contact">
+        <h3>Ready to Begin Your Transformation?</h3>
+        <p>Take the first step toward health, clarity, and purpose</p>
+        <a href="mailto:info@matransformationlab.com" class="cta-button" style="background: var(--white); color: var(--black);">Book Free Consultation</a>
+        <div class="contact-info">
+            <div class="contact-item">
+                <strong>📧 Email</strong><br>
+                info@matransformationlab.com
+            </div>
+            <div class="contact-item">
+                <strong>📍 Locations</strong><br>
+                Canada • UK • East Africa
+            </div>
+            <div class="contact-item">
+                <strong>🌐 Services</strong><br>
+                Online & In-Person
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="footerStarGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
+                                <stop offset="30%" style="stop-color:#FFB300;stop-opacity:1" />
+                                <stop offset="70%" style="stop-color:#FF8C00;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#FF6A00;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <!-- Footer Logo -->
+                        <path d="M30,20 L50,50 L70,20 L80,30 L50,60 L20,30 Z" fill="url(#footerStarGrad)"/>
+                        <path d="M40,40 L50,55 L60,40 L65,45 L50,65 L35,45 Z" fill="url(#footerStarGrad)" opacity="0.8"/>
+                        <circle cx="50" cy="75" r="8" fill="url(#footerStarGrad)" opacity="0.6"/>
+                    </svg>
+                    <span class="footer-logo-text">MA TRANSFORMATION LAB</span>
+                </div>
+                <p>Holistic transformation through counselling, wellness, and personal growth.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Services</h4>
+                <a href="#services">Mental Health Counselling</a>
+                <a href="#services">Relationship Counselling</a>
+                <a href="#services">Health & Wellness Coaching</a>
+                <a href="#services">Diabetic Management</a>
+                <a href="#services">Career Coaching</a>
+            </div>
+            <div class="footer-section">
+                <h4>Programs</h4>
+                <a href="#course">The Transformation Journey</a>
+                <a href="#course">12-Module Course</a>
+                <a href="#course">One-on-One Coaching</a>
+                <a href="#course">Group Programs</a>
+            </div>
+            <div class="footer-section">
+                <h4>Connect</h4>
+                <p>Certified & Experienced:</p>
+                <p>🇨🇦 Canada • 🇬🇧 UK • 🌍 East Africa</p>
+                <p style="margin-top: 1rem;">info@matransformationlab.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 MA Transformation Lab. Transform Your Mind, Body, and Future.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Mobile menu
+        const menuToggle = document.querySelector('.menu-toggle');
+        const nav = document.querySelector('nav ul');
+        
+        menuToggle.addEventListener('click', function() {
+            if (nav.style.display === 'flex') {
+                nav.style.display = 'none';
+            } else {
+                nav.style.display = 'flex';
+                nav.style.flexDirection = 'column';
+                nav.style.position = 'absolute';
+                nav.style.top = '100%';
+                nav.style.left = '0';
+                nav.style.right = '0';
+                nav.style.background = 'var(--black)';
+                nav.style.padding = '1rem';
+                nav.style.gap = '1rem';
+            }
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('nav') && !e.target.closest('.menu-toggle')) {
+                nav.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
