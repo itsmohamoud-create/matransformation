@@ -1,806 +1,1494 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Basic Page Info -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MA Transformation Lab - Holistic Counselling & Wellness</title>
-    <meta name="description" content="Certified holistic counselling, wellness coaching, and transformation programs. Serving Canada, UK, and East Africa.">
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Lato:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <title>MA Transformation Lab - Holistic Counselling, Courses & Wellness Coaching</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="MA Transformation Lab - Certified holistic counselling, courses, and wellness coaching for personal and professional growth. Mental health, relationships, diabetic reversal, and tutoring. Serving Canada, UK, Europe, and East Africa.">
+    <meta name="keywords" content="MA Transformation Lab, counselling, mental health, wellness coaching, diabetic reversal, relationship counselling, tutoring, holistic therapy, personal growth, career coaching, Canada, UK, Europe, East Africa, Somalia, Kenya">
+    <meta name="author" content="MA Transformation Lab">
+    <link rel="canonical" href="https://matransformation.vercel.app/">
+
+    <!-- Open Graph (Facebook, LinkedIn, etc.) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="MA Transformation Lab - Holistic Counselling & Wellness Coaching">
+    <meta property="og:description" content="Certified holistic counselling, relationship support, diabetic reversal, and transformation programs. Serving Canada, UK, Europe & East Africa.">
+    <meta property="og:url" content="https://matransformation.vercel.app/">
+    <meta property="og:image" content="https://matransformation.vercel.app/images/og-image.jpg">
+    <meta property="og:site_name" content="MA Transformation Lab">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="MA Transformation Lab - Holistic Counselling & Wellness Coaching">
+    <meta name="twitter:description" content="Certified holistic counselling, courses, and transformation programs across Canada, UK & East Africa.">
+    <meta name="twitter:image" content="https://matransformation.vercel.app/images/og-image.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+    <!-- Fonts & Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "MA Transformation Lab",
+      "url": "https://matransformation.vercel.app/",
+      "logo": "https://matransformation.vercel.app/images/og-image.jpg",
+      "sameAs": [
+        "https://www.facebook.com/matransformationlab",
+        "https://www.instagram.com/matransformationlab",
+        "https://www.linkedin.com/company/matransformationlab",
+        "https://www.youtube.com/@matransformationlab"
+      ],
+      "description": "Certified holistic counselling, wellness coaching, diabetic reversal, and career guidance services. Serving Canada, UK, Europe, and East Africa.",
+      "areaServed": ["CA", "GB", "KE", "SO"],
+      "founder": {
+        "@type": "Person",
+        "name": "Mahmoud Ahmed"
+      }
+    }
+    </script>
+
     <style>
+        /* === MA TRANSFORMATION BRAND COLORS === */
+        :root {
+            --primary-gold: #F4B400;
+            --primary-orange: #EA6A00;
+            --primary-red: #C0392B;
+            --dark-bg: #1B1B1B;
+            --light-bg: #FDF6E3;
+            --text-dark: #1B1B1B;
+            --text-light: #F8F8F8;
+            --border: #E5E5E5;
+            --shadow: 0 10px 25px rgba(0,0,0,0.1);
+            --shadow-lg: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        /* === RESET & BASE STYLES === */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        :root {
-            --gold: #FFB300;
-            --orange: #FF6A00;
-            --black: #000000;
-            --white: #FFFFFF;
-            --gradient: linear-gradient(135deg, #FF6A00, #FFB300);
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
-            font-family: 'Lato', sans-serif;
-            color: var(--black);
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--light-bg);
             overflow-x: hidden;
         }
 
-        h1, h2, h3, h4 {
-            font-family: 'Merriweather', serif;
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
 
-        /* Header/Navigation */
+        section {
+            padding: 80px 0;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 600;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, var(--primary-gold), var(--primary-orange));
+            color: var(--text-light);
+            border: 2px solid var(--primary-gold);
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(244, 180, 0, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--primary-gold);
+            color: var(--primary-gold);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-gold);
+            color: var(--text-light);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--primary-orange);
+            margin-bottom: 60px;
+            font-weight: 400;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* === HEADER & NAVIGATION === */
         header {
+            background: rgba(27, 27, 27, 0.95);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             position: fixed;
-            top: 0;
             width: 100%;
-            background: var(--black);
-            padding: 0.8rem 2rem;
+            top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 20px rgba(255, 179, 0, 0.3);
+            transition: all 0.3s ease;
         }
 
         .header-container {
-            max-width: 1200px;
-            margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 20px 0;
         }
 
-        .logo-container {
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-gold);
+            text-decoration: none;
             display: flex;
             align-items: center;
-            gap: 1rem;
         }
 
-        .logo-icon {
-            width: 50px;
-            height: 50px;
+        .logo span {
+            color: var(--primary-orange);
         }
 
-        .logo-text {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .logo-text .brand-name {
-            font-family: 'Merriweather', serif;
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--gold);
-            letter-spacing: 1px;
-            line-height: 1.1;
-        }
-
-        .logo-text .tagline {
-            font-size: 0.75rem;
-            font-style: italic;
-            color: var(--white);
-            opacity: 0.8;
-        }
-
-        nav ul {
+        .nav-links {
             display: flex;
             list-style: none;
-            gap: 2rem;
         }
 
-        nav a {
-            color: var(--white);
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
             text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s;
-            font-size: 0.95rem;
+            color: var(--text-light);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
         }
 
-        nav a:hover {
-            color: var(--gold);
+        .nav-links a:hover {
+            color: var(--primary-gold);
         }
 
-        .menu-toggle {
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: var(--primary-gold);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
             display: none;
-            flex-direction: column;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary-gold);
             cursor: pointer;
-            gap: 4px;
         }
 
-        .menu-toggle span {
-            width: 25px;
-            height: 3px;
-            background: var(--gold);
-            transition: 0.3s;
-        }
-
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            background: var(--black);
-            display: flex;
-            align-items: center;
-            padding: 6rem 2rem 2rem;
+        /* === HERO SECTION === */
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-orange) 0%, var(--primary-gold) 100%);
+            color: var(--text-light);
+            padding: 180px 20px 100px;
+            text-align: center;
             position: relative;
             overflow: hidden;
         }
 
-        .hero::before {
+        .hero-section:before {
             content: '';
             position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 80%;
-            height: 150%;
-            background: var(--gradient);
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB2aWV3Qm94PSIwIDAgMTIwMCA4MDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0iIzAwMCIgZmlsbC1vcGFjaXR5PSIwLjEiPjxwb2x5Z29uIHBvaW50cz0iMTIwMCwwIDEyMDAsODAwIDAsODAwIj48L3BvbHlnb24+PC9nPjwvc3ZnPg==');
             opacity: 0.1;
-            border-radius: 50%;
-            animation: pulse 8s ease-in-out infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); opacity: 0.1; }
-            50% { transform: scale(1.1); opacity: 0.15; }
         }
 
         .hero-content {
-            max-width: 1200px;
+            max-width: 800px;
             margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
             position: relative;
             z-index: 1;
         }
 
-        .hero-text h1 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            color: var(--gold);
-            margin-bottom: 1rem;
-            line-height: 1.1;
+        .hero-title {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
         }
 
-        .hero-text .subtitle {
-            font-size: 1.3rem;
-            color: var(--white);
-            font-style: italic;
-            margin-bottom: 1.5rem;
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            font-weight: 300;
             opacity: 0.9;
         }
 
-        .credentials {
-            display: flex;
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .credential-badge {
-            background: rgba(255, 179, 0, 0.1);
-            border: 1px solid var(--gold);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            color: var(--gold);
-            font-size: 0.9rem;
-            font-weight: 600;
-        }
-
-        .hero-text p {
-            color: var(--white);
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
+        .hero-tagline {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
             opacity: 0.8;
         }
 
-        .cta-button {
-            display: inline-block;
-            padding: 1rem 2.5rem;
-            background: var(--gradient);
-            color: var(--white);
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 1.1rem;
-            transition: transform 0.3s, box-shadow 0.3s;
-            border: none;
-            cursor: pointer;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(255, 179, 0, 0.5);
-        }
-
-        .hero-visual {
+        .hero-locations {
             display: flex;
             justify-content: center;
-            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 30px 0;
         }
 
-        .logo-display {
-            width: 100%;
-            max-width: 350px;
-            animation: float 6s ease-in-out infinite;
+        .location-tag {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: 500;
+            backdrop-filter: blur(5px);
         }
 
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
         }
 
-        /* Services Section */
-        .services {
-            padding: 6rem 2rem;
-            background: var(--white);
+        .hero-btns .btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(5px);
         }
 
-        .section-container {
-            max-width: 1200px;
-            margin: 0 auto;
+        .hero-btns .btn:hover {
+            background: white;
+            color: var(--primary-orange);
         }
 
-        .section-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .section-header h2 {
-            font-size: 2.5rem;
-            color: var(--black);
-            margin-bottom: 1rem;
-        }
-
-        .section-header p {
-            font-size: 1.2rem;
-            color: #666;
+        /* === SERVICES SECTION === */
+        .services-section {
+            background: var(--light-bg);
         }
 
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+            gap: 30px;
         }
 
         .service-card {
-            background: #f8f8f8;
-            padding: 2rem;
+            background: white;
+            padding: 40px 30px;
             border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
-            border-top: 4px solid var(--gold);
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: all 0.3s ease;
+            border-top: 4px solid var(--primary-gold);
         }
 
         .service-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            box-shadow: var(--shadow-lg);
         }
 
         .service-icon {
             font-size: 3rem;
-            margin-bottom: 1rem;
+            color: var(--primary-gold);
+            margin-bottom: 20px;
         }
 
-        .service-card h3 {
-            color: var(--black);
-            margin-bottom: 1rem;
+        .service-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--text-dark);
         }
 
-        .service-card p {
+        .service-description {
             color: #666;
-            margin-bottom: 1rem;
-            line-height: 1.6;
+            margin-bottom: 20px;
         }
 
-        .service-features {
-            list-style: none;
-            margin-bottom: 1.5rem;
+        /* === ABOUT SECTION === */
+        .about-section {
+            background: white;
         }
 
-        .service-features li {
-            padding: 0.4rem 0;
-            color: #555;
-            position: relative;
-            padding-left: 1.5rem;
-        }
-
-        .service-features li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--gold);
-            font-weight: bold;
-        }
-
-        /* Course Preview */
-        .course-preview {
-            padding: 6rem 2rem;
-            background: #f8f8f8;
-        }
-
-        .course-modules {
+        .about-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
         }
 
-        .module-card {
-            background: var(--white);
-            padding: 1.5rem;
-            border-radius: 12px;
-            border-left: 4px solid var(--gold);
-            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+        .about-image {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
         }
 
-        .module-number {
-            color: var(--gold);
-            font-weight: 700;
-            font-size: 0.9rem;
-            margin-bottom: 0.5rem;
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
         }
 
-        .module-card h4 {
-            color: var(--black);
-            margin-bottom: 0.5rem;
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .about-content h2 {
+            color: var(--primary-orange);
+        }
+
+        .about-features {
+            margin: 30px 0;
+        }
+
+        .about-feature {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .about-feature i {
+            color: var(--primary-gold);
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        /* === TESTIMONIALS SECTION === */
+        .testimonials-section {
+            background: var(--light-bg);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .testimonial-card:before {
+            content: """;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 4rem;
+            color: var(--primary-gold);
+            opacity: 0.2;
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+
+        .rating {
+            color: var(--primary-gold);
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .testimonial-text {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #4b5563;
+            margin-bottom: 20px;
+            font-style: italic;
+            position: relative;
+            z-index: 1;
+        }
+
+        .client-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .client-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-gold), var(--primary-orange));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .client-details h4 {
+            margin-bottom: 5px;
             font-size: 1.1rem;
         }
 
-        .module-card p {
-            color: #666;
-            font-size: 0.95rem;
+        .client-details p {
+            margin: 0;
+            color: var(--primary-orange);
+            font-size: 0.9rem;
         }
 
-        /* Contact/CTA Section */
-        .cta-section {
-            padding: 4rem 2rem;
-            background: var(--gradient);
+        /* === PRICING SECTION === */
+        .pricing-section {
+            background: white;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .pricing-card {
+            background: white;
+            border: 2px solid var(--border);
+            border-radius: 15px;
+            padding: 40px 30px;
             text-align: center;
-            color: var(--white);
+            transition: all 0.3s ease;
+            position: relative;
         }
 
-        .cta-section h3 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
+        .pricing-card.popular {
+            border-color: var(--primary-gold);
+            transform: scale(1.05);
+            box-shadow: 0 20px 60px rgba(244, 180, 0, 0.2);
         }
 
-        .cta-section p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
+        .popular-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary-gold);
+            color: var(--text-light);
+            padding: 6px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
         }
 
-        .contact-info {
+        .pricing-header {
+            margin-bottom: 30px;
+        }
+
+        .pricing-title {
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+        }
+
+        .price {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--primary-orange);
+            margin: 20px 0;
+        }
+
+        .price span {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        .features-list {
+            list-style: none;
+            padding: 0;
+            margin: 30px 0;
+            text-align: left;
+        }
+
+        .features-list li {
+            padding: 8px 0;
+            color: #4b5563;
             display: flex;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-            margin-top: 2rem;
+            align-items: center;
+        }
+
+        .features-list li:before {
+            content: "✓";
+            color: var(--primary-gold);
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .pricing-btn {
+            background: linear-gradient(135deg, var(--primary-gold), var(--primary-orange));
+            color: var(--text-light);
+            padding: 12px 30px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .pricing-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(244, 180, 0, 0.3);
+        }
+
+        /* === CONTACT SECTION === */
+        .contact-section {
+            background: linear-gradient(135deg, var(--primary-orange) 0%, var(--primary-red) 100%);
+            color: var(--text-light);
+        }
+
+        .contact-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .contact-info h3 {
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        .contact-details {
+            margin: 30px 0;
         }
 
         .contact-item {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 1rem 2rem;
-            border-radius: 10px;
-            backdrop-filter: blur(10px);
-        }
-
-        /* Footer */
-        footer {
-            background: var(--black);
-            color: var(--white);
-            padding: 3rem 2rem 1.5rem;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
-            margin-bottom: 2rem;
-        }
-
-        .footer-section h4 {
-            color: var(--gold);
-            margin-bottom: 1rem;
-        }
-
-        .footer-section p, .footer-section a {
-            color: var(--white);
-            opacity: 0.8;
-            text-decoration: none;
-            display: block;
-            margin-bottom: 0.5rem;
-        }
-
-        .footer-section a:hover {
-            color: var(--gold);
-        }
-
-        .footer-logo {
             display: flex;
             align-items: center;
-            gap: 1rem;
-            margin-bottom: 1rem;
+            margin-bottom: 20px;
         }
 
-        .footer-logo svg {
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-size: 1.2rem;
+        }
+
+        .contact-form-container {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .contact-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+
+        .form-input, .form-select, .form-textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .form-input:focus, .form-select:focus, .form-textarea:focus {
+            outline: none;
+            border-color: var(--primary-gold);
+            box-shadow: 0 0 0 3px rgba(244, 180, 0, 0.1);
+        }
+
+        .form-textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, var(--primary-gold), var(--primary-orange));
+            color: var(--text-light);
+            padding: 15px 40px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            grid-column: 1 / -1;
+            justify-self: start;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(244, 180, 0, 0.3);
+        }
+
+        .form-message {
+            padding: 12px;
+            border-radius: 8px;
+            margin-top: 20px;
+            display: none;
+        }
+
+        .form-message.success {
+            background: #d1fae5;
+            color: #065f46;
+            border: 1px solid #a7f3d0;
+        }
+
+        .form-message.error {
+            background: #fee2e2;
+            color: #991b1b;
+            border: 1px solid #fecaca;
+        }
+
+        /* === FOOTER === */
+        footer {
+            background: var(--dark-bg);
+            color: var(--text-light);
+            padding: 60px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--primary-gold);
+        }
+
+        .footer-col p {
+            color: #ccc;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-gold);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-link {
             width: 40px;
             height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
         }
 
-        .footer-logo-text {
-            font-family: 'Merriweather', serif;
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: var(--gold);
+        .social-link:hover {
+            background: var(--primary-gold);
+            transform: translateY(-3px);
         }
 
         .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 1.5rem;
             text-align: center;
-            opacity: 0.7;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #999;
+            font-size: 0.9rem;
         }
 
-        /* Responsive */
+        /* === WHATSAPP BUTTON === */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: #25D366;
+            color: white;
+            border-radius: 50px;
+            padding: 12px 20px;
+            text-decoration: none;
+            box-shadow: var(--shadow);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+            border: none;
+        }
+
+        .whatsapp-float:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.4);
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        /* === MOBILE RESPONSIVE === */
+        @media (max-width: 992px) {
+            .about-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
         @media (max-width: 768px) {
-            .menu-toggle {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--dark-bg);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            }
+            
+            .nav-links.active {
                 display: flex;
             }
-
-            nav ul {
+            
+            .nav-links li {
+                margin: 10px 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .contact-form {
+                grid-template-columns: 1fr;
+            }
+            
+            .whatsapp-float span:last-child {
                 display: none;
             }
-
-            .hero-content {
-                grid-template-columns: 1fr;
-                text-align: center;
+            
+            .whatsapp-float {
+                padding: 12px;
             }
-
-            .credentials {
-                justify-content: center;
-            }
-
-            .footer-content {
+            
+            .testimonials-grid, .pricing-grid {
                 grid-template-columns: 1fr;
-                text-align: center;
+            }
+            
+            .pricing-card.popular {
+                transform: none;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
+    <!-- HEADER -->
     <header>
-        <div class="header-container">
-            <div class="logo-container">
-                <svg class="logo-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                        <linearGradient id="starGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
-                            <stop offset="30%" style="stop-color:#FFB300;stop-opacity:1" />
-                            <stop offset="70%" style="stop-color:#FF8C00;stop-opacity:1" />
-                            <stop offset="100%" style="stop-color:#FF6A00;stop-opacity:1" />
-                        </linearGradient>
-                    </defs>
-                    <!-- Modern M Star Logo -->
-                    <path d="M30,20 L50,50 L70,20 L80,30 L50,60 L20,30 Z" fill="url(#starGrad)"/>
-                    <path d="M40,40 L50,55 L60,40 L65,45 L50,65 L35,45 Z" fill="url(#starGrad)" opacity="0.8"/>
-                    <circle cx="50" cy="75" r="8" fill="url(#starGrad)" opacity="0.6"/>
-                </svg>
-                <div class="logo-text">
-                    <span class="brand-name">MA TRANSFORMATION LAB</span>
-                    <span class="tagline">Ignite Your Growth</span>
-                </div>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#course">Programs</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-            <div class="menu-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+        <div class="container header-container">
+            <a href="#" class="logo">MA <span>TRANSFORMATION</span> LAB</a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </div>
     </header>
 
-    <section class="hero" id="home">
+    <!-- HERO SECTION -->
+    <section class="hero-section" id="home">
         <div class="hero-content">
-            <div class="hero-text">
-                <h1>Transform Your Life</h1>
-                <p class="subtitle">Holistic Counselling & Wellness</p>
-                <div class="credentials">
-                    <span class="credential-badge">🇨🇦 Canada</span>
-                    <span class="credential-badge">🇬🇧 UK</span>
-                    <span class="credential-badge">🌍 East Africa</span>
-                </div>
-                <p>Certified holistic counselling, wellness coaching, and transformation programs. From mental health support to diabetic reversal, career guidance to relationship counselling — we guide you to health, clarity, and purpose.</p>
-                <a href="#services" class="cta-button">Explore Services</a>
+            <h1 class="hero-title">MA TRANSFORMATION LAB</h1>
+            <p class="hero-subtitle">Ignite Your Growth • Transform Your Life</p>
+            <p class="hero-tagline">Holistic Counselling & Wellness</p>
+            <div class="hero-locations">
+                <div class="location-tag">✓ Canada</div>
+                <div class="location-tag">✓ UK</div>
+                <div class="location-tag">✓ Europe</div>
+                <div class="location-tag">✓ East Africa</div>
             </div>
-            <div class="hero-visual">
-                <svg class="logo-display" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                        <linearGradient id="heroStarGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
-                            <stop offset="30%" style="stop-color:#FFB300;stop-opacity:1" />
-                            <stop offset="70%" style="stop-color:#FF8C00;stop-opacity:1" />
-                            <stop offset="100%" style="stop-color:#FF6A00;stop-opacity:1" />
-                        </linearGradient>
-                    </defs>
-                    <!-- Large Hero Logo -->
-                    <path d="M120,80 L200,200 L280,80 L320,120 L200,240 L80,120 Z" fill="url(#heroStarGrad)" filter="drop-shadow(0 0 25px rgba(255,179,0,0.7))"/>
-                    <path d="M160,160 L200,220 L240,160 L260,180 L200,260 L140,180 Z" fill="url(#heroStarGrad)" opacity="0.8" filter="drop-shadow(0 0 20px rgba(255,140,0,0.6))"/>
-                    <circle cx="200" cy="300" r="30" fill="url(#heroStarGrad)" opacity="0.6" filter="drop-shadow(0 0 15px rgba(255,106,0,0.5))"/>
-                </svg>
+            <p>Certified holistic counselling, wellness coaching, and transformation programs</p>
+            <div class="hero-btns">
+                <a href="#services" class="btn">Explore Services</a>
+                <a href="#contact" class="btn">Get Started</a>
             </div>
         </div>
     </section>
 
-    <section class="services" id="services">
-        <div class="section-container">
-            <div class="section-header">
-                <h2>Comprehensive Services</h2>
-                <p>Holistic support for every aspect of your transformation</p>
-            </div>
+    <!-- SERVICES SECTION -->
+    <section class="services-section" id="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <p class="section-subtitle">Comprehensive wellness solutions tailored to your unique needs and goals</p>
+            
             <div class="services-grid">
                 <div class="service-card">
-                    <div class="service-icon">🧠</div>
-                    <h3>Mental Health Counselling</h3>
-                    <p>Professional support for anxiety, depression, stress, and emotional challenges. Certified holistic counselling approach.</p>
-                    <ul class="service-features">
-                        <li>Trauma-informed care</li>
-                        <li>Anxiety & depression support</li>
-                        <li>Stress management</li>
-                        <li>Emotional regulation</li>
-                    </ul>
+                    <div class="service-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3 class="service-title">Holistic Counselling</h3>
+                    <p class="service-description">Personalized therapy addressing mental, emotional, and spiritual wellbeing for lasting transformation.</p>
+                    <a href="#contact" class="btn btn-secondary">Learn More</a>
                 </div>
-
+                
                 <div class="service-card">
-                    <div class="service-icon">❤️</div>
-                    <h3>Relationship & Family Counselling</h3>
-                    <p>Guidance for couples, marriage enrichment, family dynamics, and healthy relationship building.</p>
-                    <ul class="service-features">
-                        <li>Marriage counselling</li>
-                        <li>Pre-marital guidance</li>
-                        <li>Family therapy</li>
-                        <li>Communication skills</li>
-                    </ul>
+                    <div class="service-icon">
+                        <i class="fas fa-hand-holding-heart"></i>
+                    </div>
+                    <h3 class="service-title">Relationship Support</h3>
+                    <p class="service-description">Strengthen connections, resolve conflicts, and build healthier relationships with expert guidance.</p>
+                    <a href="#contact" class="btn btn-secondary">Learn More</a>
                 </div>
-
+                
                 <div class="service-card">
-                    <div class="service-icon">💪</div>
-                    <h3>Health & Wellness Coaching</h3>
-                    <p>Personalized nutrition, fitness, and lifestyle transformation programs for optimal wellbeing.</p>
-                    <ul class="service-features">
-                        <li>Nutrition planning</li>
-                        <li>Fitness guidance</li>
-                        <li>Sleep optimization</li>
-                        <li>Energy management</li>
-                    </ul>
+                    <div class="service-icon">
+                        <i class="fas fa-stethoscope"></i>
+                    </div>
+                    <h3 class="service-title">Diabetic Reversal</h3>
+                    <p class="service-description">Comprehensive programs to manage and reverse diabetes through lifestyle and nutritional changes.</p>
+                    <a href="#contact" class="btn btn-secondary">Learn More</a>
                 </div>
-
+                
                 <div class="service-card">
-                    <div class="service-icon">🩺</div>
-                    <h3>Diabetic Management & Reversal</h3>
-                    <p>Evidence-based programs for managing and reversing Type 2 diabetes through lifestyle transformation.</p>
-                    <ul class="service-features">
-                        <li>Blood sugar management</li>
-                        <li>Diabetic nutrition plans</li>
-                        <li>Lifestyle modification</li>
-                        <li>Reversal protocols</li>
-                    </ul>
+                    <div class="service-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="service-title">Tutoring & Courses</h3>
+                    <p class="service-description">Educational support and specialized courses for personal development and academic success.</p>
+                    <a href="#contact" class="btn btn-secondary">Learn More</a>
                 </div>
-
+                
                 <div class="service-card">
-                    <div class="service-icon">🚀</div>
-                    <h3>Career Coaching</h3>
-                    <p>Professional guidance for career transitions, job search strategies, and discovering your purpose-driven path.</p>
-                    <ul class="service-features">
-                        <li>Career clarity & direction</li>
-                        <li>Resume & interview prep</li>
-                        <li>Career transitions</li>
-                        <li>Purpose discovery</li>
-                    </ul>
+                    <div class="service-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3 class="service-title">Career Coaching</h3>
+                    <p class="service-description">Strategic guidance to advance your career, find purpose, and achieve professional fulfillment.</p>
+                    <a href="#contact" class="btn btn-secondary">Learn More</a>
                 </div>
-
+                
                 <div class="service-card">
-                    <div class="service-icon">🌱</div>
-                    <h3>Personal Growth Mentorship</h3>
-                    <p>Transform limiting beliefs, build confidence, and create sustainable habits for lasting transformation.</p>
-                    <ul class="service-features">
-                        <li>Mindset transformation</li>
-                        <li>Confidence building</li>
-                        <li>Goal achievement</li>
-                        <li>Habit formation</li>
-                    </ul>
+                    <div class="service-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3 class="service-title">Wellness Programs</h3>
+                    <p class="service-description">Customized wellness plans integrating nutrition, exercise, and mindfulness for optimal health.</p>
+                    <a href="#contact" class="btn btn-secondary">Learn More</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="course-preview" id="course">
-        <div class="section-container">
-            <div class="section-header">
-                <h2>The Transformation Journey</h2>
-                <p>Our comprehensive 12-module holistic wellness program</p>
-            </div>
-            <div class="course-modules">
-                <div class="module-card">
-                    <div class="module-number">MODULE 1</div>
-                    <h4>The Awakening Moment</h4>
-                    <p>Discover your "why" and begin your transformation journey with courage and clarity.</p>
+    <!-- ABOUT SECTION -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="about-container">
+                <div class="about-image">
+                    <!-- Your professional photo placeholder -->
+                    <div style="width:100%; height:400px; background:linear-gradient(135deg, var(--primary-orange), var(--primary-gold)); display:flex; align-items:center; justify-content:center; color:white; font-size:1.5rem;">
+                        Mahmoud Ahmed<br>Founder
+                    </div>
                 </div>
-                <div class="module-card">
-                    <div class="module-number">MODULE 2</div>
-                    <h4>Healing from Inside Out</h4>
-                    <p>Trauma-informed emotional understanding, nervous system regulation, and breathwork techniques.</p>
-                </div>
-                <div class="module-card">
-                    <div class="module-number">MODULE 3</div>
-                    <h4>The Art of Letting Go</h4>
-                    <p>Release emotional dependencies, set healthy boundaries, and reclaim personal peace.</p>
-                </div>
-                <div class="module-card">
-                    <div class="module-number">MODULE 4</div>
-                    <h4>The New Self</h4>
-                    <p>Reclaim confidence, design your next version, and establish daily success structures.</p>
-                </div>
-                <div class="module-card">
-                    <div class="module-number">MODULE 5</div>
-                    <h4>Nutrition & Metabolic Health</h4>
-                    <p>Master the nutrition-mental health connection. Learn diabetic reversal protocols and optimal eating strategies.</p>
-                </div>
-                <div class="module-card">
-                    <div class="module-number">MODULE 6</div>
-                    <h4>Faith, Flow & Focus</h4>
-                    <p>Integrate spiritual practices, gratitude, and mindfulness into daily transformation.</p>
-                </div>
-                <div class="module-card">
-                    <div class="module-number">MODULE 7</div>
-                    <h4>Purpose Mapping</h4>
-                    <p>Turn pain into purpose and identify your unique service path in the world.</p>
-                </div>
-                <div class="module-card">
-                    <div class="module-number">MODULE 8</div>
-                    <h4>Mastering Communication</h4>
-                    <p>Develop authentic speaking skills, active listening, and healing through voice.</p>
-                </div>
-                <div class="module-card">
-                    <div class="module-number">MODULE 9</div>
-                    <h4>Building Legacy Projects</h4>
-                    <p>Design purpose-driven life projects that create sustainable impact and fulfillment.</p>
-                </div>
-                <div class="module-card">
-                    <div class="module-number">MODULE 10</div>
-                    <h4>Becoming the Guide</h4>
-                    <p>Transition from survivor to mentor while maintaining sustainable energy and avoiding burnout.</p>
-                </div>
-                <div class="module-card">
-                    <div class="module-number">MODULE 11</div>
-                    <h4>Continuous Evolution</h4>
-                    <p>Cultivate growth mindset, embrace feedback, and measure your transformation progress.</p>
-                </div>
-                <div class="module-card">
-                    <div class="module-number">MODULE 12</div>
-                    <h4>Legacy Mindset</h4>
-                    <p>Define success beyond money and create your lasting transformation legacy.</p>
+                <div class="about-content">
+                    <h2>About Mahmoud Ahmed</h2>
+                    <p>Founded by <strong>Mahmoud Ahmed</strong>, MA Transformation Lab is a premier holistic wellness center dedicated to empowering individuals through personalized counselling, coaching, and educational programs.</p>
+                    
+                    <div class="about-features">
+                        <div class="about-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Certified Holistic Counselor & Wellness Specialist</span>
+                        </div>
+                        <div class="about-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Evidence-based holistic approaches</span>
+                        </div>
+                        <div class="about-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Multicultural and multilingual services</span>
+                        </div>
+                        <div class="about-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Flexible online and in-person sessions</span>
+                        </div>
+                    </div>
+                    
+                    <p>Mahmoud's mission is to ignite personal growth and facilitate lasting transformation by addressing the interconnected aspects of mental, emotional, physical, and spiritual wellbeing.</p>
+                    <a href="#contact" class="btn">Schedule Consultation</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="cta-section" id="contact">
-        <h3>Ready to Begin Your Transformation?</h3>
-        <p>Take the first step toward health, clarity, and purpose</p>
-        <a href="mailto:info@matransformationlab.com" class="cta-button" style="background: var(--white); color: var(--black);">Book Free Consultation</a>
-        <div class="contact-info">
-            <div class="contact-item">
-                <strong>📧 Email</strong><br>
-                info@matransformationlab.com
+    <!-- TESTIMONIALS SECTION -->
+    <section class="testimonials-section" id="testimonials">
+        <div class="container">
+            <h2 class="section-title">Client Success Stories</h2>
+            <p class="section-subtitle">Hear from individuals who have transformed their lives with our guidance</p>
+            
+            <div class="testimonials-grid">
+                <!-- Original 3 + 6 New Testimonials -->
+                <div class="testimonial-card">
+                    <div class="rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">MA Transformation Lab helped me overcome anxiety and find purpose in my life. The holistic approach addressed not just my mental health but also my physical wellbeing. I'm forever grateful.</p>
+                    <div class="client-info">
+                        <div class="client-avatar">SA</div>
+                        <div class="client-details">
+                            <h4>Sarah A.</h4>
+                            <p>Toronto, Canada</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">The diabetic reversal program changed my life. I've reduced my medication and feel more energetic than ever. The personalized nutrition plan was easy to follow and effective.</p>
+                    <div class="client-info">
+                        <div class="client-avatar">JM</div>
+                        <div class="client-details">
+                            <h4>James M.</h4>
+                            <p>London, UK</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">Relationship counselling saved my marriage. We learned communication skills that transformed how we connect. Mahmoud was compassionate and insightful.</p>
+                    <div class="client-info">
+                        <div class="client-avatar">AK</div>
+                        <div class="client-details">
+                            <h4>Amina K.</h4>
+                            <p>Nairobi, Kenya</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NEW Testimonial 4 -->
+                <div class="testimonial-card">
+                    <div class="rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">I was stuck in a career that drained me. Mahmoud's career coaching helped me identify my true passion and transition successfully. Now I wake up excited about work every day!</p>
+                    <div class="client-info">
+                        <div class="client-avatar">DW</div>
+                        <div class="client-details">
+                            <h4>David W.</h4>
+                            <p>Manchester, UK</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NEW Testimonial 5 -->
+                <div class="testimonial-card">
+                    <div class="rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">The comprehensive wellness program transformed my health completely. Lost 30kg, improved my sleep, and gained confidence I never had. Mahmoud's support was incredible throughout the journey.</p>
+                    <div class="client-info">
+                        <div class="client-avatar">FL</div>
+                        <div class="client-details">
+                            <h4>Fatima L.</h4>
+                            <p>Mogadishu, Somalia</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NEW Testimonial 6 -->
+                <div class="testimonial-card">
+                    <div class="rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">After struggling with depression for years, I finally found hope. Mahmoud's holistic counselling approach addressed root causes, not just symptoms. I feel like myself again.</p>
+                    <div class="client-info">
+                        <div class="client-avatar">MH</div>
+                        <div class="client-details">
+                            <h4>Mohamed H.</h4>
+                            <p>Vancouver, Canada</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NEW Testimonial 7 -->
+                <div class="testimonial-card">
+                    <div class="rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">My son was struggling academically and losing confidence. Mahmoud's tutoring program not only improved his grades but also his self-esteem. He's now thriving in school!</p>
+                    <div class="client-info">
+                        <div class="client-avatar">LB</div>
+                        <div class="client-details">
+                            <h4>Lisa B.</h4>
+                            <p>Birmingham, UK</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NEW Testimonial 8 -->
+                <div class="testimonial-card">
+                    <div class="rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">We were on the brink of separation. Mahmoud's couples counselling gave us tools to understand each other better. Our relationship is stronger than ever. Thank you for saving our family!</p>
+                    <div class="client-info">
+                        <div class="client-avatar">RK</div>
+                        <div class="client-details">
+                            <h4>Rashid & Khadija</h4>
+                            <p>Mombasa, Kenya</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NEW Testimonial 9 -->
+                <div class="testimonial-card">
+                    <div class="rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">The 12-module transformation program exceeded all expectations. It covered everything from mindset to nutrition to relationships. Life-changing doesn't even begin to describe it!</p>
+                    <div class="client-info">
+                        <div class="client-avatar">TN</div>
+                        <div class="client-details">
+                            <h4>Thomas N.</h4>
+                            <p>Dublin, Ireland</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="contact-item">
-                <strong>📍 Locations</strong><br>
-                Canada • UK • East Africa
-            </div>
-            <div class="contact-item">
-                <strong>🌐 Services</strong><br>
-                Online & In-Person
+
+            <!-- Testimonial CTA -->
+            <div style="text-align: center; margin-top: 50px;">
+                <p style="font-size: 1.2rem; margin-bottom: 20px; color: #666;">Ready to write your own success story?</p>
+                <a href="#contact" class="btn">Start Your Transformation Today</a>
             </div>
         </div>
     </section>
 
+    <!-- PRICING SECTION -->
+    <section class="pricing-section" id="pricing">
+        <div class="container">
+            <h2 class="section-title">Transformation Programs</h2>
+            <p class="section-subtitle">Choose the program that fits your transformation journey</p>
+            
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3 class="pricing-title">Essential Wellness</h3>
+                        <p>Perfect for starting your transformation journey</p>
+                    </div>
+                    <div class="price">$99<span>/month</span></div>
+                    <ul class="features-list">
+                        <li>4 counselling sessions per month</li>
+                        <li>Basic wellness assessment</li>
+                        <li>Email support</li>
+                        <li>Access to resource library</li>
+                        <li>Monthly progress tracking</li>
+                    </ul>
+                    <button class="pricing-btn">Get Started</button>
+                </div>
+                
+                <div class="pricing-card popular">
+                    <div class="popular-badge">Most Popular</div>
+                    <div class="pricing-header">
+                        <h3 class="pricing-title">Transformation Pro</h3>
+                        <p>Our most comprehensive program</p>
+                    </div>
+                    <div class="price">$249<span>/month</span></div>
+                    <ul class="features-list">
+                        <li>8 counselling sessions per month</li>
+                        <li>Comprehensive wellness assessment</li>
+                        <li>Priority email & chat support</li>
+                        <li>Personalized wellness plan</li>
+                        <li>Nutrition & exercise guidance</li>
+                        <li>Weekly progress reviews</li>
+                        <li>Access to all courses</li>
+                    </ul>
+                    <button class="pricing-btn">Get Started</button>
+                </div>
+                
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3 class="pricing-title">Elite Partnership</h3>
+                        <p>For deep, lasting transformation</p>
+                    </div>
+                    <div class="price">$499<span>/month</span></div>
+                    <ul class="features-list">
+                        <li>Unlimited counselling sessions</li>
+                        <li>Comprehensive diagnostic assessment</li>
+                        <li>24/7 priority support</li>
+                        <li>Customized transformation plan</li>
+                        <li>Dedicated wellness coach</li>
+                        <li>Bi-weekly strategy sessions</li>
+                        <li>Lifetime access to all resources</li>
+                        <li>Family session included</li>
+                    </ul>
+                    <button class="pricing-btn">Get Started</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact-section" id="contact">
+        <div class="container contact-container">
+            <h2 class="section-title">Start Your Transformation Today</h2>
+            <p class="section-subtitle">Reach out to schedule your consultation or ask any questions</p>
+            
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <p>Ready to ignite your growth and transform your life? Contact Mahmoud Ahmed today to begin your journey.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4>Locations</h4>
+                                <p>Canada • UK • Europe • East Africa</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4>Email</h4>
+                                <p>info@matransformationlab.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4>Phone/WhatsApp</h4>
+                                <p>+252 63 866 6133</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="https://facebook.com/matransformationlab" class="social-link" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://instagram.com/matransformationlab" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://linkedin.com/company/matransformationlab" class="social-link" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://youtube.com/@matransformationlab" class="social-link" target="_blank"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="contact-form-container">
+                    <form class="contact-form" id="transformationForm" action="https://formsubmit.co/info@matransformationlab.com" method="POST">
+                        <!-- FormSubmit Configuration -->
+                        <input type="hidden" name="_subject" value="New Contact Form Submission - MA Transformation Lab">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_next" value="https://matransformation.vercel.app/thank-you.html">
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="name">Full Name</label>
+                            <input type="text" id="name" name="name" class="form-input" placeholder="Your Name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="email">Email Address</label>
+                            <input type="email" id="email" name="email" class="form-input" placeholder="your.email@example.com" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" class="form-input" placeholder="Your Phone Number">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="service">Service Interest</label>
+                            <select id="service" name="service" class="form-select" required>
+                                <option value="">Select a service</option>
+                                <option value="counselling">Holistic Counselling</option>
+                                <option value="relationships">Relationship Support</option>
+                                <option value="diabetic">Diabetic Reversal</option>
+                                <option value="tutoring">Tutoring & Courses</option>
+                                <option value="career">Career Coaching</option>
+                                <option value="wellness">Wellness Programs</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <label class="form-label" for="message">Your Message</label>
+                            <textarea id="message" name="message" class="form-textarea" placeholder="Tell us about your transformation goals..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">Send Message & Start Transformation</button>
+                        
+                        <div class="form-message" id="formMessage"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
     <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <div class="footer-logo">
-                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <linearGradient id="footerStarGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
-                                <stop offset="30%" style="stop-color:#FFB300;stop-opacity:1" />
-                                <stop offset="70%" style="stop-color:#FF8C00;stop-opacity:1" />
-                                <stop offset="100%" style="stop-color:#FF6A00;stop-opacity:1" />
-                            </linearGradient>
-                        </defs>
-                        <!-- Footer Logo -->
-                        <path d="M30,20 L50,50 L70,20 L80,30 L50,60 L20,30 Z" fill="url(#footerStarGrad)"/>
-                        <path d="M40,40 L50,55 L60,40 L65,45 L50,65 L35,45 Z" fill="url(#footerStarGrad)" opacity="0.8"/>
-                        <circle cx="50" cy="75" r="8" fill="url(#footerStarGrad)" opacity="0.6"/>
-                    </svg>
-                    <span class="footer-logo-text">MA TRANSFORMATION LAB</span>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>MA TRANSFORMATION LAB</h3>
+                    <p>Igniting personal growth and facilitating lasting transformation through holistic counselling, wellness coaching, and educational programs.</p>
+                    <div class="social-links">
+                        <a href="https://facebook.com/matransformationlab" class="social-link" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://instagram.com/matransformationlab" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://linkedin.com/company/matransformationlab" class="social-link" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://youtube.com/@matransformationlab" class="social-link" target="_blank"><i class="fab fa-youtube"></i></a>
+                    </div>
                 </div>
-                <p>Holistic transformation through counselling, wellness, and personal growth.</p>
+                
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#services">Holistic Counselling</a></li>
+                        <li><a href="#services">Relationship Support</a></li>
+                        <li><a href="#services">Diabetic Reversal</a></li>
+                        <li><a href="#services">Tutoring & Courses</a></li>
+                        <li><a href="#services">Career Coaching</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <ul class="footer-links">
+                        <li><a href="mailto:info@matransformationlab.com">info@matransformationlab.com</a></li>
+                        <li><a href="tel:+252638666133">+252 63 866 6133</a></li>
+                        <li><a href="#contact">Canada • UK • Europe • East Africa</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="footer-section">
-                <h4>Services</h4>
-                <a href="#services">Mental Health Counselling</a>
-                <a href="#services">Relationship Counselling</a>
-                <a href="#services">Health & Wellness Coaching</a>
-                <a href="#services">Diabetic Management</a>
-                <a href="#services">Career Coaching</a>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 MA Transformation Lab. All rights reserved. | <a href="privacy-policy.html" style="color: var(--primary-gold);">Privacy Policy</a> | <a href="terms-of-service.html" style="color: var(--primary-gold);">Terms of Service</a></p>
             </div>
-            <div class="footer-section">
-                <h4>Programs</h4>
-                <a href="#course">The Transformation Journey</a>
-                <a href="#course">12-Module Course</a>
-                <a href="#course">One-on-One Coaching</a>
-                <a href="#course">Group Programs</a>
-            </div>
-            <div class="footer-section">
-                <h4>Connect</h4>
-                <p>Certified & Experienced:</p>
-                <p>🇨🇦 Canada • 🇬🇧 UK • 🌍 East Africa</p>
-                <p style="margin-top: 1rem;">info@matransformationlab.com</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>© 2025 MA Transformation Lab. Transform Your Mind, Body, and Future.</p>
         </div>
     </footer>
 
+    <!-- WHATSAPP FLOATING BUTTON -->
+    <a href="#" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+        <span>💬</span>
+        <span>Chat with Mahmoud</span>
+    </a>
+
     <script>
-        // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
             });
         });
 
-        // Mobile menu
-        const menuToggle = document.querySelector('.menu-toggle');
-        const nav = document.querySelector('nav ul');
+        // WhatsApp Button
+        const whatsappNumber = "252638666133";
+        const whatsappMessage = "Hi Mahmoud! I'm interested in MA Transformation Lab services and would like to know more.";
+        const encodedMessage = encodeURIComponent(whatsappMessage);
         
-        menuToggle.addEventListener('click', function() {
-            if (nav.style.display === 'flex') {
-                nav.style.display = 'none';
-            } else {
-                nav.style.display = 'flex';
-                nav.style.flexDirection = 'column';
-                nav.style.position = 'absolute';
-                nav.style.top = '100%';
-                nav.style.left = '0';
-                nav.style.right = '0';
-                nav.style.background = 'var(--black)';
-                nav.style.padding = '1rem';
-                nav.style.gap = '1rem';
-            }
+        document.querySelector('.whatsapp-float').href = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+        // Contact Form Handling
+        document.getElementById('transformationForm').addEventListener('submit', function(e) {
+            const form = e.target;
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const messageDiv = document.getElementById('formMessage');
+            
+            submitBtn.innerHTML = 'Sending...';
+            submitBtn.disabled = true;
+            
+            // Form will now submit to FormSubmit.co
+            // Show success message after a brief delay
+            setTimeout(() => {
+                messageDiv.className = 'form-message success';
+                messageDiv.innerHTML = '🎉 Thank you! Your message has been sent. We\'ll contact you within 24 hours.';
+                messageDiv.style.display = 'block';
+                
+                submitBtn.innerHTML = 'Send Message & Start Transformation';
+                submitBtn.disabled = false;
+            }, 1000);
         });
 
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', function(e) {
-            if (!e.target.closest('nav') && !e.target.closest('.menu-toggle')) {
-                nav.style.display = 'none';
+        // Pricing buttons
+        document.querySelectorAll('.pricing-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const plan = this.closest('.pricing-card').querySelector('h3').textContent;
+                const message = `Hi Mahmoud! I'm interested in the ${plan} program. Can you tell me more?`;
+                const encoded = encodeURIComponent(message);
+                window.open(`https://wa.me/${whatsappNumber}?text=${encoded}`, '_blank');
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'var(--dark-bg)';
+                header.style.boxShadow = '0 5px 20px rgba(0,0,0,0.1)';
+            } else {
+                header.style.background = 'rgba(27, 27, 27, 0.95)';
+                header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
             }
         });
     </script>
