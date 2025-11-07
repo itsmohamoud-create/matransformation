@@ -1,0 +1,2509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MA TRANSFORMATION LAB | Strategic Life, Health & Career Transformation</title>
+    <meta name="description" content="Strategic transformation system for emotional mastery, health optimization, and career direction. Serving Canada, UK, Europe & East Africa.">
+    
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* ========================================
+        MA TRANSFORMATION LAB BRAND SYSTEM
+        ======================================== */
+        :root {
+            /* Primary Brand Colors */
+            --brand-gold: #FFD700;
+            --brand-orange: #FF8C00;
+            --brand-yellow: #FFEB3B;
+            --brand-pink: #E91E63;
+            --brand-purple: #8A2BE2;
+            --dark-purple: #2E0854;
+            
+            /* Dark Theme (Header/Footer ONLY) */
+            --header-black: #0A0A0A;
+            --footer-black: #0A0A0A;
+            --dark-text: #FFFFFF;
+            
+            /* Light Theme (ALL Content Sections) */
+            --light-bg: #FFFFFF;
+            --light-card: #F8F9FA;
+            --light-text: #2D3748;
+            --light-border: #E2E8F0;
+            
+            /* Gradients */
+            --gradient-primary: linear-gradient(135deg, var(--brand-gold), var(--brand-orange), var(--brand-pink), var(--brand-purple));
+            --gradient-gold: linear-gradient(135deg, var(--brand-gold), var(--brand-orange));
+            --gradient-purple: linear-gradient(135deg, var(--brand-purple), var(--dark-purple));
+            --gradient-hero: linear-gradient(135deg, #8A2BE2 0%, #4B0082 100%);
+            --gradient-expert: linear-gradient(135deg, var(--brand-purple), var(--brand-orange), var(--brand-gold));
+            
+            /* Effects */
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+            --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
+            --shadow-gold: 0 5px 15px rgba(255, 215, 0, 0.4);
+        }
+
+        /* ========================================
+        RESET & BASE STYLES
+        ======================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            max-width: 100%;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--light-text);
+            background: var(--light-bg);
+            position: relative;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 0;
+            width: 100%;
+        }
+
+        /* Force light theme on all content sections */
+        section:not(.hero-section):not(.curriculum-section):not(.footer):not(.team-section):not(.expert-network-section) {
+            background: var(--light-bg) !important;
+        }
+
+        section:nth-child(even):not(.hero-section):not(.curriculum-section):not(.footer):not(.team-section):not(.expert-network-section) {
+            background: var(--light-card) !important;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 600;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+        }
+
+        /* ========================================
+        MODERN HEADER - BLACK WITH BRAND HEADER
+        ======================================== */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 70px;
+            background: var(--header-black) !important;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            z-index: 1000;
+            border-bottom: 2px solid var(--brand-gold);
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .header.scrolled {
+            height: 60px;
+            box-shadow: 0 5px 20px rgba(255, 215, 0, 0.2);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        /* Logo with gradient arrow design */
+        .logo-icon {
+            width: 45px;
+            height: 45px;
+            background: var(--gradient-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--header-black);
+            font-weight: bold;
+            font-size: 20px;
+            border: 2px solid var(--brand-gold);
+            filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5));
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-5px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Brand header exactly like your image */
+        .brand-name {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.1rem !important;
+            font-weight: 800;
+            background: linear-gradient(90deg, var(--brand-gold), var(--brand-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 1px;
+            line-height: 1.1;
+            white-space: nowrap;
+            position: relative;
+        }
+
+        .brand-name::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--brand-gold), var(--brand-purple));
+        }
+
+        .tagline {
+            font-size: 0.7rem !important;
+            font-style: italic;
+            color: var(--brand-yellow);
+            opacity: 0.9;
+            margin-top: -2px;
+        }
+
+        /* Navigation */
+        .nav-list {
+            display: flex;
+            list-style: none;
+            gap: 28px;
+            align-items: center;
+        }
+
+        .nav-list a {
+            color: var(--dark-text);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.92rem;
+            padding: 6px 8px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-list a:hover {
+            color: var(--brand-gold);
+        }
+
+        .nav-list a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--brand-gold);
+            transition: width 0.3s ease;
+        }
+
+        .nav-list a:hover:after {
+            width: 100%;
+        }
+
+        /* Dropdown for Courses */
+        .nav-list .dropdown {
+            position: relative;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: var(--header-black);
+            padding: 1rem;
+            box-shadow: 0 5px 20px rgba(255, 215, 0, 0.2);
+            list-style: none;
+            min-width: 200px;
+            border-radius: 5px;
+            border: 1px solid var(--brand-gold);
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        .dropdown-menu li {
+            margin-bottom: 0.5rem;
+        }
+
+        .dropdown-menu a {
+            color: var(--dark-text);
+            font-size: 0.9rem;
+            padding: 8px 12px;
+            display: block;
+            border-radius: 3px;
+        }
+
+        .dropdown-menu a:hover {
+            background: rgba(255, 215, 0, 0.1);
+        }
+
+        /* Mobile Menu */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 4px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--brand-gold);
+            transition: 0.3s;
+        }
+
+        /* ========================================
+        MODERN HERO SECTION - WITH NEW CONTENT
+        ======================================== */
+        .hero-section {
+            padding: 140px 20px 100px;
+            text-align: center;
+            background: var(--gradient-hero) !important;
+            color: var(--dark-text);
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: heroEntrance 1s ease-out 0.2s forwards;
+            width: 100%;
+        }
+
+        @keyframes heroEntrance {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-tagline {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            font-weight: 300;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .hero-title {
+            font-size: clamp(1.8rem, 4vw, 3rem);
+            margin: 0 0 8px;
+            font-weight: 800;
+            color: var(--brand-gold);
+            text-shadow: 0 2px 6px rgba(0,0,0,.25);
+        }
+
+        .hero-subtitle {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+            background: var(--gradient-gold);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-description {
+            font-size: 1.2rem;
+            opacity: .95;
+            margin: 0 auto 18px;
+            max-width: 860px;
+        }
+
+        /* Compact Country Layout */
+        .compact-locations {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 20px 0 30px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .location-pair {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+
+        .location-tag {
+            padding: 8px 16px;
+            border-radius: 999px;
+            background: rgba(255,255,255,.15);
+            border: 1px solid rgba(255,255,255,.4);
+            font-weight: 600;
+            color: var(--dark-text);
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            min-width: 120px;
+        }
+
+        .location-tag:hover {
+            transform: translateY(-2px);
+            background: rgba(255,255,255,.25);
+        }
+
+        .hero-btns {
+            display: inline-flex;
+            gap: 12px;
+            justify-content: center;
+            margin-top: 12px;
+        }
+
+        /* ========================================
+        MODERN BUTTONS
+        ======================================== */
+        .btn {
+            display: inline-block;
+            padding: 12px 22px;
+            background: var(--gradient-primary) !important;
+            color: #111 !important;
+            border: none;
+            border-radius: 999px;
+            font-weight: 700;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: 0.5s;
+        }
+
+        .btn:hover:before {
+            left: 100%;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-gold);
+        }
+
+        .btn-secondary {
+            background: transparent !important;
+            border: 2px solid var(--brand-gold);
+            color: #fff !important;
+        }
+
+        .btn-secondary:hover {
+            background: var(--brand-gold) !important;
+            color: #111 !important;
+        }
+
+        /* ========================================
+        GLOBAL RESULTS BAR
+        ======================================== */
+        .results-bar {
+            background: var(--gradient-primary);
+            color: var(--header-black);
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .results-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .result-item {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .result-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .result-text {
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        /* ========================================
+        SERVICES SECTION WITH NEW CONTENT
+        ======================================== */
+        .services-section {
+            background: var(--light-bg);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--light-card);
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: all 0.3s ease;
+            border-top: 4px solid var(--brand-gold);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,215,0,0.1), transparent);
+            transition: 0.5s;
+        }
+
+        .service-card:hover:before {
+            left: 100%;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .service-number {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 3rem;
+            font-weight: 800;
+            color: rgba(0,0,0,0.05);
+            z-index: 0;
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: var(--brand-gold);
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--light-text);
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-description {
+            color: #666;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--light-text);
+            position: relative;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--gradient-primary);
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--brand-orange);
+            margin-bottom: 60px;
+            font-weight: 400;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* ========================================
+        ABOUT SECTION WITH NEW CONTENT
+        ======================================== */
+        .about-section {
+            background: var(--light-card);
+        }
+
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-image {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+        }
+
+        .about-image:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-primary);
+            opacity: 0.2;
+            z-index: 1;
+        }
+
+        .about-image-placeholder {
+            width: 100%;
+            height: 400px;
+            background: var(--gradient-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            flex-direction: column;
+        }
+
+        .about-content h2 {
+            color: var(--brand-purple);
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+
+        .about-content .founder-name {
+            color: var(--brand-orange);
+            font-weight: 700;
+        }
+
+        .about-features {
+            margin: 30px 0;
+        }
+
+        .about-feature {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .about-feature i {
+            color: var(--brand-gold);
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        /* ========================================
+        TEAM SECTION
+        ======================================== */
+        .team-section {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%) !important;
+            color: var(--dark-text);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .team-card {
+            text-align: center;
+            padding: 30px 20px;
+            background: rgba(255,255,255,.08);
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+            position: relative;
+            border: 1px solid rgba(255,255,255,.1);
+        }
+
+        .team-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient-primary);
+        }
+
+        .team-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(255, 215, 0, 0.2);
+        }
+
+        .team-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            background: var(--gradient-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark-text);
+            font-weight: bold;
+            font-size: 2rem;
+            box-shadow: var(--shadow-gold);
+        }
+
+        .team-name {
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+            color: var(--brand-gold);
+        }
+
+        .team-role {
+            color: var(--brand-yellow);
+            font-weight: 500;
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+
+        .team-bio {
+            color: rgba(255,255,255,.8);
+            line-height: 1.6;
+            font-size: 0.9rem;
+        }
+
+        /* ========================================
+        EXPERT NETWORK SECTION
+        ======================================== */
+        .expert-network-section {
+            background: var(--gradient-expert) !important;
+            color: var(--dark-text);
+        }
+
+        .expert-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .category-card {
+            background: rgba(255,255,255,.15);
+            padding: 25px 20px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            border-left: 4px solid var(--brand-gold);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255,255,255,.2);
+        }
+
+        .category-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 215, 0, 0.3);
+            background: rgba(255,255,255,.2);
+        }
+
+        .category-card h4 {
+            color: var(--brand-gold);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.1rem;
+        }
+
+        .category-card h4 i {
+            color: var(--brand-yellow);
+        }
+
+        .category-card p {
+            color: rgba(255,255,255,.9);
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        /* ========================================
+        SIGNATURE PROGRAM SECTION
+        ======================================== */
+        .program-section {
+            background: var(--light-card);
+        }
+
+        .program-phases {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .phase-card {
+            background: var(--light-bg);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .phase-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient-primary);
+        }
+
+        .phase-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .phase-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: rgba(0,0,0,0.05);
+            position: absolute;
+            top: 10px;
+            right: 20px;
+        }
+
+        .phase-title {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--brand-purple);
+        }
+
+        .phase-modules {
+            list-style: none;
+        }
+
+        .phase-modules li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .phase-modules li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--brand-gold);
+            font-weight: bold;
+        }
+
+        .program-cta {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        /* ========================================
+        PACKAGES SECTION
+        ======================================== */
+        .pricing-section {
+            background: var(--light-bg);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .pricing-card {
+            background: var(--light-bg);
+            border: 2px solid #E5E5E5;
+            border-radius: 15px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .pricing-card.popular {
+            border-color: var(--brand-gold);
+            transform: scale(1.05);
+            box-shadow: 0 20px 60px rgba(255, 215, 0, 0.2);
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--gradient-gold);
+            color: var(--header-black);
+            padding: 6px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .pricing-header {
+            margin-bottom: 30px;
+        }
+
+        .pricing-title {
+            font-size: 1.5rem;
+            color: var(--light-text);
+            margin-bottom: 10px;
+        }
+
+        .price {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--brand-orange);
+            margin: 20px 0;
+        }
+
+        .price span {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        .features-list {
+            list-style: none;
+            padding: 0;
+            margin: 30px 0;
+            text-align: left;
+        }
+
+        .features-list li {
+            padding: 8px 0;
+            color: #4b5563;
+            display: flex;
+            align-items: center;
+        }
+
+        .features-list li:before {
+            content: "✓";
+            color: var(--brand-gold);
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        /* ========================================
+        TRANSFORMATION JOURNEY
+        ======================================== */
+        .journey-section {
+            background: var(--light-card);
+        }
+
+        .journey-steps {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            margin-top: 50px;
+        }
+
+        .journey-steps:before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--gradient-primary);
+            z-index: 1;
+        }
+
+        .journey-step {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            flex: 1;
+        }
+
+        .step-circle {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: var(--dark-text);
+            font-size: 1.8rem;
+            font-weight: 700;
+            box-shadow: var(--shadow);
+        }
+
+        .step-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--brand-purple);
+        }
+
+        .step-description {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* ========================================
+        TESTIMONIALS CAROUSEL
+        ======================================== */
+        .testimonials-section {
+            background: var(--light-bg);
+        }
+
+        .testimonial-carousel {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .testimonial-track {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .testimonial-slide {
+            min-width: 100%;
+            padding: 0 20px;
+        }
+
+        .testimonial-card {
+            background: var(--light-card);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            position: relative;
+        }
+
+        .testimonial-card:before {
+            content: """;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 4rem;
+            color: var(--brand-gold);
+            opacity: 0.2;
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+
+        .rating {
+            color: var(--brand-gold);
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-text {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #4b5563;
+            margin-bottom: 25px;
+            font-style: italic;
+            position: relative;
+            z-index: 1;
+        }
+
+        .client-info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .client-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--gradient-gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark-text);
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .client-details h4 {
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+            text-align: left;
+        }
+
+        .client-details p {
+            margin: 0;
+            color: var(--brand-purple);
+            font-size: 0.9rem;
+            text-align: left;
+        }
+
+        .carousel-nav {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 30px;
+        }
+
+        .carousel-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #ddd;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .carousel-dot.active {
+            background: var(--brand-gold);
+            transform: scale(1.2);
+        }
+
+        /* ========================================
+        FAQ SECTION
+        ======================================== */
+        .faq-section {
+            background: var(--light-card);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--light-bg);
+            border-radius: 10px;
+            margin-bottom: 15px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: rgba(255, 215, 0, 0.05);
+        }
+
+        .faq-question:after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--brand-gold);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-question:after {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 20px 20px;
+            max-height: 500px;
+        }
+
+        /* ========================================
+        FINAL CTA SECTION
+        ======================================== */
+        .cta-section {
+            background: var(--gradient-primary);
+            color: var(--dark-text);
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .cta-title {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--dark-text);
+        }
+
+        .cta-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-btn {
+            background: var(--header-black);
+            color: var(--dark-text);
+            border: 2px solid var(--header-black);
+        }
+
+        .cta-btn:hover {
+            background: transparent;
+            color: var(--header-black);
+        }
+
+        /* ========================================
+        FLOATING ACTION BUTTONS
+        ======================================== */
+        .floating-buttons {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 999;
+        }
+
+        .scroll-to-top {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-primary);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .scroll-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-to-top:hover {
+            transform: translateY(-3px) scale(1.1);
+        }
+
+        .whatsapp-button {
+            width: 65px;
+            height: 65px;
+            background: #25D366;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+
+        .whatsapp-button:hover {
+            transform: translateY(-3px) scale(1.05);
+        }
+
+        /* ========================================
+        DARK FOOTER
+        ======================================== */
+        .footer {
+            background: var(--footer-black) !important;
+            color: var(--dark-text);
+            padding: 60px 0 30px;
+            border-top: 2px solid var(--brand-gold);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+            padding: 0 20px;
+        }
+
+        .footer-section h4 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--brand-gold);
+        }
+
+        .footer-section p {
+            color: rgba(255,255,255,0.7);
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .footer-logo-text {
+            font-weight: 700;
+            color: var(--brand-gold);
+            font-size: 1.2rem;
+        }
+
+        .footer-section a {
+            display: block;
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            margin-bottom: 10px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--brand-gold);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--brand-gold);
+            transform: translateY(-3px);
+        }
+
+        .footer-legal {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 2rem;
+            margin-top: 2rem;
+            text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 20px 0;
+        }
+
+        .legal-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
+
+        .legal-links a {
+            color: var(--brand-gold);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .legal-links a:hover {
+            color: var(--brand-white);
+        }
+
+        .legal-links span {
+            color: rgba(255,255,255,0.3);
+        }
+
+        .copyright {
+            color: rgba(255,255,255,0.6);
+            font-size: 0.9rem;
+        }
+
+        /* ========================================
+        REVEAL ANIMATIONS
+        ======================================== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ========================================
+        MOBILE RESPONSIVE
+        ======================================== */
+        @media (max-width: 768px) {
+            html, body {
+                overflow-x: hidden;
+                position: relative;
+                width: 100%;
+            }
+            
+            .header {
+                height: 64px;
+                padding: 0 15px;
+                width: 100%;
+            }
+            
+            .menu-toggle {
+                display: flex;
+            }
+            
+            .nav {
+                display: none;
+            }
+            
+            .nav.active {
+                display: block;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--header-black);
+                padding: 1rem;
+                box-shadow: 0 5px 20px rgba(255, 215, 0, 0.2);
+                width: 100%;
+            }
+            
+            .nav-list {
+                flex-direction: column;
+                gap: 1rem;
+                width: 100%;
+            }
+
+            /* FIX: Courses dropdown mobile behavior */
+            .dropdown-menu {
+                position: static !important;
+                background: transparent !important;
+                box-shadow: none !important;
+                border: none !important;
+                padding-left: 20px !important;
+                width: 100%;
+            }
+
+            .dropdown-menu a {
+                padding: 10px 15px !important;
+                border-radius: 5px !important;
+                width: 100%;
+            }
+
+            .hero-section {
+                padding: 120px 15px 80px;
+                width: 100%;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.5rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+            }
+            
+            .compact-locations {
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+            }
+            
+            .location-pair {
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            .location-tag {
+                min-width: auto;
+                width: 100%;
+            }
+            
+            .contact-form {
+                grid-template-columns: 1fr;
+                width: 100%;
+            }
+            
+            .testimonials-grid, .programs-grid, .stats-grid, .process-steps, .experts-grid, .services-grid, .phases-grid, .team-grid {
+                grid-template-columns: 1fr;
+                width: 100%;
+            }
+            
+            .program-card.featured {
+                transform: none;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .floating-buttons {
+                bottom: 15px;
+                right: 15px;
+            }
+
+            .expert-categories {
+                grid-template-columns: 1fr;
+            }
+            
+            .container {
+                padding: 0 15px;
+                width: 100%;
+            }
+
+            .about-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .journey-steps {
+                flex-direction: column;
+                gap: 30px;
+            }
+            
+            .journey-steps:before {
+                display: none;
+            }
+            
+            .pricing-card.popular {
+                transform: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 1.8rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .brand-name {
+                font-size: 1.1rem;
+            }
+            
+            .tagline {
+                font-size: 0.7rem;
+            }
+            
+            .social-link {
+                width: 45px;
+                height: 45px;
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- MODERN HEADER - BLACK ON ALL DEVICES -->
+    <header class="header">
+        <div class="header-container">
+            <a href="#" class="logo">
+                <div class="logo-icon">MA</div>
+                <div class="logo-text">
+                    <span class="brand-name">MA TRANSFORMATION LAB</span>
+                    <span class="tagline">Ignite Your Growth</span>
+                </div>
+            </a>
+
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li class="dropdown">
+                        <a href="#programs">Programs</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#programs">Transformation System</a></li>
+                            <li><a href="#packages">Packages</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#testimonials">Success Stories</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+
+            <button class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- MODERN HERO SECTION - PURPLE ON ALL DEVICES -->
+    <section class="hero-section" id="home">
+        <div class="hero-content">
+            <p class="hero-tagline">Struggle to Strength. Doubt to Direction. Chaos to Clarity.</p>
+            <h1 class="hero-title">MA TRANSFORMATION LAB</h1>
+            <p class="hero-subtitle">Strategic Life, Health, and Career Transformation</p>
+            <p class="hero-description">A strategic, multidisciplinary system for emotional mastery, mental clarity, health optimisation, and long-term personal transformation.</p>
+            
+            <!-- Compact Country Layout -->
+            <div class="compact-locations">
+                <div class="location-pair">
+                    <div class="location-tag">🇨🇦 Canada</div>
+                    <div class="location-tag">🇬🇧 UK</div>
+                </div>
+                <div class="location-pair">
+                    <div class="location-tag">🇪🇺 Europe</div>
+                    <div class="location-tag">🌍 East Africa</div>
+                </div>
+            </div>
+            
+            <div class="hero-btns">
+                <a href="#contact" class="btn">Book Your Free Strategic Consultation</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- GLOBAL RESULTS BAR -->
+    <section class="results-bar">
+        <div class="container">
+            <div class="results-container">
+                <div class="result-item">
+                    <div class="result-number" id="counter1">0</div>
+                    <div class="result-text">Lives Elevated</div>
+                </div>
+                <div class="result-item">
+                    <div class="result-number" id="counter2">0</div>
+                    <div class="result-text">Years of Expertise</div>
+                </div>
+                <div class="result-item">
+                    <div class="result-number" id="counter3">0</div>
+                    <div class="result-text">Continents Served</div>
+                </div>
+                <div class="result-item">
+                    <div class="result-number" id="counter4">0%</div>
+                    <div class="result-text">Client Success Rate</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section class="services-section reveal" id="services">
+        <div class="container">
+            <h2 class="section-title">Our Strategic Solutions</h2>
+            <p class="section-subtitle">Comprehensive transformation services tailored to your unique needs and goals</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-number">01</div>
+                    <div class="service-icon">
+                        <i class="fas fa-archway"></i>
+                    </div>
+                    <h3 class="service-title">Life Architecture & Emotional Mastery</h3>
+                    <p class="service-description">Build emotional stability, inner resilience, and clear life direction through structured frameworks and proven techniques.</p>
+                    <a href="#contact" class="btn btn-secondary">Learn More</a>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-number">02</div>
+                    <div class="service-icon">
+                        <i class="fas fa-people-arrows"></i>
+                    </div>
+                    <h3 class="service-title">Strategic Relationship Engineering</h3>
+                    <p class="service-description">Resolve conflicts, rebuild trust, and enhance communication mastery for healthier, more fulfilling relationships.</p>
+                    <a href="#contact" class="btn btn-secondary">Learn More</a>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-number">03</div>
+                    <div class="service-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3 class="service-title">Metabolic Reset & Lifestyle Blueprint</h3>
+                    <p class="service-description">Evidence-based approach to diabetes reversal, metabolic balance, and wellness optimisation through sustainable lifestyle changes.</p>
+                    <a href="#contact" class="btn btn-secondary">Learn More</a>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-number">04</div>
+                    <div class="service-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="service-title">Academic & Personal Growth Strategy</h3>
+                    <p class="service-description">Learning strategies, discipline, and life skill development for consistent success in academic and personal endeavors.</p>
+                    <a href="#contact" class="btn btn-secondary">Learn More</a>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-number">05</div>
+                    <div class="service-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3 class="service-title">Career Discovery & Professional Positioning</h3>
+                    <p class="service-description">Identify strengths, purpose, and professional pathways for long-term fulfilment and career advancement.</p>
+                    <a href="#contact" class="btn btn-secondary">Learn More</a>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-number">06</div>
+                    <div class="service-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3 class="service-title">Wellness System Planning</h3>
+                    <p class="service-description">Nutrition, movement, sleep, stress optimisation, and holistic lifestyle integration for optimal wellbeing.</p>
+                    <a href="#contact" class="btn btn-secondary">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="about-section reveal" id="about">
+        <div class="container">
+            <div class="about-container">
+                <div class="about-image">
+                    <div class="about-image-placeholder">
+                        <span style="font-size: 2rem; font-weight: 700;">Mohamoud Ahmed</span>
+                        <span>Transformation Strategist</span>
+                    </div>
+                </div>
+                <div class="about-content">
+                    <h2>Meet the Strategist Behind the Lab</h2>
+                    <p>Founded by <span class="founder-name">Mohamoud Ahmed</span> — Transformation Strategist with 14+ years guiding individuals through emotional rebuilding, health restructuring, and strategic life direction.</p>
+                    
+                    <div class="about-features">
+                        <div class="about-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>A multidisciplinary strategist combining psychology, behavioral science, faith, and practical execution</span>
+                        </div>
+                        <div class="about-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Guided 500+ clients across four continents to measurable transformations</span>
+                        </div>
+                        <div class="about-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Evidence-based holistic approaches tailored to individual needs</span>
+                        </div>
+                        <div class="about-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Multicultural and multilingual services with global perspective</span>
+                        </div>
+                    </div>
+                    
+                    <p>Mohamoud's mission is to ignite personal growth and facilitate lasting transformation by addressing the interconnected aspects of mental, emotional, physical, and spiritual wellbeing through structured, actionable strategies.</p>
+                    <a href="#contact" class="btn">Claim Your Strategic Consultation</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TEAM SECTION -->
+    <section class="team-section reveal" id="team">
+        <div class="container">
+            <h2 class="section-title" style="color: var(--brand-gold);">Our Core Team</h2>
+            <p class="section-subtitle" style="color: var(--brand-yellow);">Passionate professionals dedicated to your transformation journey</p>
+            
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-avatar">MA</div>
+                    <h3 class="team-name">Mahmoud Ahmed</h3>
+                    <p class="team-role">Founder & Lead Transformation Strategist</p>
+                    <p class="team-bio">14+ years experience in holistic wellness. Certified counselor guiding clients toward lasting personal growth and transformation.</p>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-avatar">BF</div>
+                    <h3 class="team-name">Dr. B. Farouk</h3>
+                    <p class="team-role">Wellness Consultant</p>
+                    <p class="team-bio">Integrating cardiovascular health with holistic wellness strategies for optimal physical and emotional wellbeing.</p>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-avatar">AA</div>
+                    <h3 class="team-name">Ayan Abdi</h3>
+                    <p class="team-role">Counselling Specialist</p>
+                    <p class="team-bio">Providing compassionate support for mental health, emotional resilience, and relationship healing.</p>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-avatar">SH</div>
+                    <h3 class="team-name">Sagal Hussain</h3>
+                    <p class="team-role">Nutrition Specialist</p>
+                    <p class="team-bio">Empowering clients to reverse diabetes and reclaim vitality through personalized nutritional guidance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERT NETWORK SECTION -->
+    <section class="expert-network-section reveal">
+        <div class="container">
+            <h2 class="section-title" style="color: var(--brand-gold);">Specialist Network</h2>
+            <p class="section-subtitle" style="color: var(--brand-yellow);">A unified professional network supporting every area of your life</p>
+            
+            <div class="expert-categories">
+                <div class="category-card">
+                    <h4><i class="fas fa-user-md"></i> Medical Doctors & Cardiologists</h4>
+                    <p>Professional guidance for heart health, chronic conditions, and overall physical wellness</p>
+                </div>
+                <div class="category-card">
+                    <h4><i class="fas fa-brain"></i> Psychiatrists & Therapists</h4>
+                    <p>Expert support for anxiety, depression, stress management, and emotional wellbeing</p>
+                </div>
+                <div class="category-card">
+                    <h4><i class="fas fa-users"></i> Family & Marriage Counsellors</h4>
+                    <p>Guidance for marriage, family dynamics, youth challenges, and communication skills</p>
+                </div>
+                <div class="category-card">
+                    <h4><i class="fas fa-dumbbell"></i> Fitness & Nutrition Specialists</h4>
+                    <p>Personalized plans for weight management, diabetes reversal, and sustainable health</p>
+                </div>
+                <div class="category-card">
+                    <h4><i class="fas fa-pray"></i> Islamic Ruqya & Spiritual Healers</h4>
+                    <p>Faith-based support, spiritual guidance, and healing practices including Ruqya</p>
+                </div>
+                <div class="category-card">
+                    <h4><i class="fas fa-briefcase"></i> Career & Business Mentors</h4>
+                    <p>Strategic mentoring for career transitions, professional growth, and academic success</p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 40px;">
+                <p style="color: var(--brand-yellow); font-weight: 600;"><strong>Every professional brings years of experience, expertise, and empathy — so you can connect with the right support without the wait.</strong></p>
+                <a href="#contact" class="btn" style="margin-top: 20px;">Book Your Consultation</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SIGNATURE PROGRAM SECTION -->
+    <section class="program-section reveal" id="programs">
+        <div class="container">
+            <h2 class="section-title">The MA Transformation System</h2>
+            <p class="section-subtitle">12 Modules • 4 Phases • One Life-Changing Blueprint</p>
+            
+            <div class="program-phases">
+                <div class="phase-card">
+                    <div class="phase-number">1</div>
+                    <h3 class="phase-title">PHASE 1 — Mental & Wellness Reset</h3>
+                    <ul class="phase-modules">
+                        <li>Emotional Mastery & Regulation</li>
+                        <li>Mind-Body & Nervous System Alignment</li>
+                        <li>Faith, Resilience & Inner Strength</li>
+                    </ul>
+                </div>
+                
+                <div class="phase-card">
+                    <div class="phase-number">2</div>
+                    <h3 class="phase-title">PHASE 2 — Health System Upgrade</h3>
+                    <ul class="phase-modules">
+                        <li>Diabetes & Metabolic Health Blueprint</li>
+                        <li>Nutrition & Fitness Framework</li>
+                        <li>Heart-Mind Resilience</li>
+                    </ul>
+                </div>
+                
+                <div class="phase-card">
+                    <div class="phase-number">3</div>
+                    <h3 class="phase-title">PHASE 3 — Growth & Personal Power</h3>
+                    <ul class="phase-modules">
+                        <li>Confidence & Resilience</li>
+                        <li>Relationships & Boundaries</li>
+                        <li>Youth Emotional Intelligence</li>
+                    </ul>
+                </div>
+                
+                <div class="phase-card">
+                    <div class="phase-number">4</div>
+                    <h3 class="phase-title">PHASE 4 — Career, Leadership & Impact</h3>
+                    <ul class="phase-modules">
+                        <li>Career Discovery & Personal Branding</li>
+                        <li>Business & Entrepreneurship Foundations</li>
+                        <li>Leadership & Legacy Building</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="program-cta">
+                <p style="margin-bottom: 30px; font-size: 1.1rem;">Includes: Workbooks • Templates • Community • Certification</p>
+                <a href="#contact" class="btn">Enroll in the Program</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- PACKAGES SECTION -->
+    <section class="pricing-section reveal" id="packages">
+        <div class="container">
+            <h2 class="section-title">Choose Your Transformation Path</h2>
+            <p class="section-subtitle">Flexible packages designed for your unique transformation journey</p>
+            
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3 class="pricing-title">Essential Wellness</h3>
+                        <p>Perfect for starting your transformation journey</p>
+                    </div>
+                    <div class="price">$99<span>/month</span></div>
+                    <ul class="features-list">
+                        <li>Weekly check-ins</li>
+                        <li>Basic wellness strategy</li>
+                        <li>Email support</li>
+                        <li>Access to resource library</li>
+                        <li>Monthly progress tracking</li>
+                    </ul>
+                    <button class="btn pricing-btn">Start Essential</button>
+                </div>
+                
+                <div class="pricing-card popular">
+                    <div class="popular-badge">Most Popular</div>
+                    <div class="pricing-header">
+                        <h3 class="pricing-title">Transformation & Career Pro</h3>
+                        <p>Our most comprehensive program</p>
+                    </div>
+                    <div class="price">$249<span>/month</span></div>
+                    <ul class="features-list">
+                        <li>Twice-weekly sessions</li>
+                        <li>Career + wellness integration</li>
+                        <li>Advanced strategies</li>
+                        <li>Priority support</li>
+                        <li>Personalized wellness plan</li>
+                        <li>Nutrition & exercise guidance</li>
+                        <li>Weekly progress reviews</li>
+                    </ul>
+                    <button class="btn pricing-btn">Start Pro</button>
+                </div>
+                
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3 class="pricing-title">Elite Partnership</h3>
+                        <p>For deep, lasting transformation</p>
+                    </div>
+                    <div class="price">$499<span>/month</span></div>
+                    <ul class="features-list">
+                        <li>Unlimited sessions</li>
+                        <li>24/7 direct access</li>
+                        <li>Custom program</li>
+                        <li>VIP experience</li>
+                        <li>Retreat planning</li>
+                        <li>Dedicated wellness coach</li>
+                        <li>Family session included</li>
+                    </ul>
+                    <button class="btn pricing-btn">Start Elite</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRANSFORMATION JOURNEY -->
+    <section class="journey-section reveal">
+        <div class="container">
+            <h2 class="section-title">Your Transformation in 4 Steps</h2>
+            <p class="section-subtitle">A structured path from initial connection to lasting transformation</p>
+            
+            <div class="journey-steps">
+                <div class="journey-step">
+                    <div class="step-circle">1</div>
+                    <h3 class="step-title">Connect</h3>
+                    <p class="step-description">Free strategic consultation to understand your needs and goals</p>
+                </div>
+                
+                <div class="journey-step">
+                    <div class="step-circle">2</div>
+                    <h3 class="step-title">Assess</h3>
+                    <p class="step-description">Personalised evaluation & blueprint creation for your transformation</p>
+                </div>
+                
+                <div class="journey-step">
+                    <div class="step-circle">3</div>
+                    <h3 class="step-title">Transform</h3>
+                    <p class="step-description">Targeted implementation & guidance through our proven system</p>
+                </div>
+                
+                <div class="journey-step">
+                    <div class="step-circle">4</div>
+                    <h3 class="step-title">Thrive</h3>
+                    <p class="step-description">Long-term support & optimisation for sustained success</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section class="testimonials-section reveal" id="testimonials">
+        <div class="container">
+            <h2 class="section-title">Client Success Stories</h2>
+            <p class="section-subtitle">Hear from individuals who have transformed their lives with our guidance</p>
+            
+            <div class="testimonial-carousel">
+                <div class="testimonial-track" id="testimonialTrack">
+                    <!-- Testimonial slides will be added via JavaScript -->
+                </div>
+                
+                <div class="carousel-nav" id="carouselNav">
+                    <!-- Navigation dots will be added via JavaScript -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="faq-section reveal">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <p class="section-subtitle">Get answers to the most common questions about our transformation system</p>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">How is MA Transformation Lab different from other coaches?</div>
+                    <div class="faq-answer">
+                        <p>We combine psychology, wellness science, behavioral strategy, and faith-based alignment to deliver structured, measurable transformation. No guesswork, no generic advice — just actionable, proven strategies tailored to your unique needs and goals.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">How long will it take to see results?</div>
+                    <div class="faq-answer">
+                        <p>Most clients see tangible improvements within 4–12 weeks, depending on their engagement and chosen program. We focus on sustainable change rather than quick fixes, ensuring long-term transformation.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Can I combine different programs or packages?</div>
+                    <div class="faq-answer">
+                        <p>Yes. Our programs are modular and integrative, allowing you to mix and match services based on your goals. During your consultation, we'll design a personalized blueprint that combines the elements you need most.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Are the services available online?</div>
+                    <div class="faq-answer">
+                        <p>Absolutely. We serve clients globally through secure video sessions, digital workbooks, and ongoing support. Our online platform ensures you receive the same quality of service regardless of your location.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Do you offer support outside sessions?</div>
+                    <div class="faq-answer">
+                        <p>Yes. Packages provide varying levels of direct access, email support, and community engagement for continuous progress. We're committed to supporting you throughout your transformation journey.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Is this suitable for serious health conditions like diabetes?</div>
+                    <div class="faq-answer">
+                        <p>Our Metabolic Reset & Lifestyle Blueprint works alongside medical guidance to provide evidence-based nutritional and lifestyle strategies. We always recommend consulting with your healthcare provider for medical conditions.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">How do I get started?</div>
+                    <div class="faq-answer">
+                        <p>Begin with a Free Strategic Consultation. We'll assess your needs, design a personal blueprint, and set clear steps toward measurable transformation. Click the "Book Consultation" button to get started.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA SECTION -->
+    <section class="cta-section" id="contact">
+        <div class="container">
+            <h2 class="cta-title">Ready to Build the Strongest Version of Yourself?</h2>
+            <p class="cta-subtitle">Your new chapter begins with one strategic conversation.</p>
+            <a href="#" class="btn cta-btn">Book Your Free Strategic Consultation</a>
+        </div>
+    </section>
+
+    <!-- FLOATING ACTION BUTTONS -->
+    <div class="floating-buttons">
+        <a href="https://wa.me/252638666133?text=Hi%20Mahmoud!%20I'm%20interested%20in%20your%20transformation%20programs.%20Can%20you%20tell%20me%20more?" 
+           class="whatsapp-button" target="_blank" aria-label="Chat on WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
+            <i class="fas fa-chevron-up"></i>
+        </button>
+    </div>
+
+    <!-- DARK FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <div class="logo-icon" style="width: 40px; height: 40px; font-size: 16px;">MA</div>
+                        <span class="footer-logo-text">MA TRANSFORMATION LAB</span>
+                    </div>
+                    <p>Transform Your Mind, Body & Future through strategic counselling, wellness coaching, and personal growth programs.</p>
+                    <div class="social-links">
+                        <a href="https://facebook.com/matransformationlab" class="social-link" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://instagram.com/matransformationlab" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://linkedin.com/company/matransformationlab" class="social-link" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://youtube.com/@matransformationlab" class="social-link" target="_blank"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <a href="#services">Life Architecture & Emotional Mastery</a>
+                    <a href="#services">Strategic Relationship Engineering</a>
+                    <a href="#services">Wellness & Nutrition</a>
+                    <a href="#services">Metabolic Reset & Diabetes Management</a>
+                    <a href="#services">Career Discovery & Growth</a>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Programs</h4>
+                    <a href="#programs">12-Module Curriculum</a>
+                    <a href="#packages">Essential</a>
+                    <a href="#packages">Pro</a>
+                    <a href="#packages">Elite</a>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <p>Certified & Experienced:</p>
+                    <p>🇨🇦 Canada • 🇬🇧 UK • 🌍 East Africa</p>
+                    <p style="margin-top: 1rem;">
+                        <strong>Email:</strong><br>
+                        <a href="mailto:matransformationlab@gmail.com">matransformationlab@gmail.com</a>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Legal Links -->
+            <div class="footer-legal">
+                <div class="legal-links">
+                    <a href="legal.html">Legal & Ethical Framework</a>
+                    <span>•</span>
+                    <a href="legal.html#privacy">Privacy Promise</a>
+                    <span>•</span>
+                    <a href="legal.html#terms">Terms of Engagement</a>
+                    <span>•</span>
+                    <a href="legal.html#refund">Refund Policy</a>
+                </div>
+                <p class="copyright">© 2025 MA Transformation Lab. Transform Your Mind, Body, and Future.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const nav = document.querySelector('.nav');
+        const header = document.querySelector('.header');
+
+        menuToggle.addEventListener('click', () => {
+            nav.classList.toggle('active');
+            
+            // Animate hamburger to X
+            const spans = menuToggle.querySelectorAll('span');
+            if (nav.classList.contains('active')) {
+                spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+                spans[1].style.opacity = '0';
+                spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
+            } else {
+                spans[0].style.transform = 'none';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = 'none';
+            }
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const scrollToTop = document.getElementById('scrollToTop');
+            
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+                scrollToTop.classList.add('visible');
+            } else {
+                header.classList.remove('scrolled');
+                scrollToTop.classList.remove('visible');
+            }
+        });
+
+        // Scroll to top
+        document.getElementById('scrollToTop').addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // WhatsApp Button
+        const whatsappNumber = "252638666133";
+        const whatsappMessage = "Hi! I'm interested in MA Transformation Lab services and would like to know more.";
+        const encodedMessage = encodeURIComponent(whatsappMessage);
+        
+        const whatsappLink = document.querySelector('.whatsapp-button');
+        if (whatsappLink) {
+            whatsappLink.href = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+        }
+
+        // Animated Counters
+        function animateCounter(element, target, duration) {
+            let start = 0;
+            const increment = target / (duration / 16);
+            const timer = setInterval(() => {
+                start += increment;
+                if (start >= target) {
+                    element.textContent = target + (element.id === 'counter4' ? '%' : '');
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(start) + (element.id === 'counter4' ? '%' : '');
+                }
+            }, 16);
+        }
+
+        // Initialize counters when in view
+        function initCounters() {
+            const counter1 = document.getElementById('counter1');
+            const counter2 = document.getElementById('counter2');
+            const counter3 = document.getElementById('counter3');
+            const counter4 = document.getElementById('counter4');
+            
+            animateCounter(counter1, 500, 2000);
+            animateCounter(counter2, 14, 2000);
+            animateCounter(counter3, 4, 2000);
+            animateCounter(counter4, 98, 2000);
+        }
+
+        // Wait for page to load before initializing counters
+        window.addEventListener('load', initCounters);
+
+        // Testimonials Carousel
+        const testimonials = [
+            {
+                text: "From daily anxiety and burnout to a confident career promotion within 6 months, guided by a clear emotional and wellness blueprint.",
+                name: "Amina Hassan",
+                location: "London, UK",
+                rating: 5,
+                avatar: "AH"
+            },
+            {
+                text: "Rebuilt my health, energy, and mindset in 12 weeks — finally living the life I wanted after years of struggle with diabetes.",
+                name: "David Chen",
+                location: "Toronto, Canada",
+                rating: 5,
+                avatar: "DC"
+            },
+            {
+                text: "The relationship counseling saved my marriage. We went from constant arguments to rediscovering our connection and building a stronger foundation.",
+                name: "Sarah Johnson",
+                location: "Berlin, Germany",
+                rating: 5,
+                avatar: "SJ"
+            },
+            {
+                text: "As a student, I was lost and unmotivated. The academic strategy sessions gave me direction, discipline, and the confidence to excel.",
+                name: "Mohamed Ali",
+                location: "Nairobi, Kenya",
+                rating: 5,
+                avatar: "MA"
+            },
+            {
+                text: "The career coaching helped me transition from a dead-end job to a fulfilling career that aligns with my values and strengths.",
+                name: "James Wilson",
+                location: "Manchester, UK",
+                rating: 5,
+                avatar: "JW"
+            },
+            {
+                text: "After trying multiple therapists, MA Transformation provided the structured approach I needed to overcome anxiety and build resilience.",
+                name: "Fatima Ahmed",
+                location: "Hargeisa, Somaliland",
+                rating: 5,
+                avatar: "FA"
+            },
+            {
+                text: "The metabolic reset program helped me reverse my prediabetes diagnosis and completely transform my relationship with food and exercise.",
+                name: "Lisa Rodriguez",
+                location: "Vancouver, Canada",
+                rating: 5,
+                avatar: "LR"
+            },
+            {
+                text: "As an entrepreneur, I was burning out. The life architecture sessions gave me the tools to balance business success with personal wellbeing.",
+                name: "Omar Farah",
+                location: "Stockholm, Sweden",
+                rating: 5,
+                avatar: "OF"
+            },
+            {
+                text: "The youth emotional intelligence program helped my teenager develop confidence and coping skills during a difficult transitional period.",
+                name: "Nadia Mohammed",
+                location: "Minneapolis, USA",
+                rating: 5,
+                avatar: "NM"
+            },
+            {
+                text: "I came for career guidance but found so much more. The holistic approach transformed every area of my life in ways I never expected.",
+                name: "Daniel Kim",
+                location: "Seoul, South Korea",
+                rating: 5,
+                avatar: "DK"
+            },
+            {
+                text: "After a difficult divorce, the emotional mastery sessions helped me rebuild my identity and find purpose again.",
+                name: "Halima Abdi",
+                location: "Mogadishu, Somalia",
+                rating: 5,
+                avatar: "HA"
+            },
+            {
+                text: "The structured approach to wellness helped me lose 40 pounds and completely change my lifestyle for sustainable health.",
+                name: "Robert Taylor",
+                location: "Melbourne, Australia",
+                rating: 5,
+                avatar: "RT"
+            }
+        ];
+
+        function initTestimonialCarousel() {
+            const track = document.getElementById('testimonialTrack');
+            const nav = document.getElementById('carouselNav');
+            let currentSlide = 0;
+            
+            // Create slides
+            testimonials.forEach((testimonial, index) => {
+                const slide = document.createElement('div');
+                slide.className = 'testimonial-slide';
+                
+                const stars = '★'.repeat(testimonial.rating);
+                
+                slide.innerHTML = `
+                    <div class="testimonial-card">
+                        <div class="rating">${stars}</div>
+                        <p class="testimonial-text">"${testimonial.text}"</p>
+                        <div class="client-info">
+                            <div class="client-avatar">${testimonial.avatar}</div>
+                            <div class="client-details">
+                                <h4>${testimonial.name}</h4>
+                                <p>${testimonial.location}</p>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                
+                track.appendChild(slide);
+                
+                // Create nav dot
+                const dot = document.createElement('div');
+                dot.className = 'carousel-dot';
+                if (index === 0) dot.classList.add('active');
+                dot.addEventListener('click', () => {
+                    goToSlide(index);
+                });
+                nav.appendChild(dot);
+            });
+            
+            function goToSlide(index) {
+                currentSlide = index;
+                track.style.transform = `translateX(-${index * 100}%)`;
+                
+                // Update active dot
+                document.querySelectorAll('.carousel-dot').forEach((dot, i) => {
+                    if (i === index) {
+                        dot.classList.add('active');
+                    } else {
+                        dot.classList.remove('active');
+                    }
+                });
+            }
+            
+            // Auto advance slides
+            setInterval(() => {
+                currentSlide = (currentSlide + 1) % testimonials.length;
+                goToSlide(currentSlide);
+            }, 5000);
+        }
+
+        // FAQ Accordion
+        function initFAQ() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                
+                question.addEventListener('click', () => {
+                    // Close all other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+            });
+        }
+
+        // Pricing buttons - open WhatsApp with plan details
+        document.querySelectorAll('.pricing-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const plan = this.closest('.pricing-card').querySelector('.pricing-title').textContent;
+                const message = `Hi! I'm interested in the ${plan} program. Can you tell me more?`;
+                const encoded = encodeURIComponent(message);
+                window.open(`https://wa.me/${whatsappNumber}?text=${encoded}`, '_blank');
+            });
+        });
+
+        // Section reveal animations on scroll
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(section => {
+            revealObserver.observe(section);
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (nav.classList.contains('active')) {
+                        nav.classList.remove('active');
+                        const spans = menuToggle.querySelectorAll('span');
+                        spans[0].style.transform = 'none';
+                        spans[1].style.opacity = '1';
+                        spans[2].style.transform = 'none';
+                    }
+                }
+            });
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.header-container')) {
+                nav.classList.remove('active');
+                // Reset hamburger
+                const spans = menuToggle.querySelectorAll('span');
+                spans[0].style.transform = 'none';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = 'none';
+                
+                // Close dropdowns
+                document.querySelectorAll('.dropdown').forEach(dropdown => {
+                    dropdown.classList.remove('active');
+                });
+            }
+        });
+
+        // Initialize components when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            initTestimonialCarousel();
+            initFAQ();
+        });
+    </script>
+</body>
+</html>
